@@ -1,0 +1,112 @@
+import "./App.css";
+
+// Theme
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import { useState } from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
+// Toolbar
+import AppBar from "@mui/material/AppBar";
+import IconButton from "@mui/material/IconButton";
+import Toolbar from "@mui/material/Toolbar";
+
+// Grid
+// import * as React from 'react';
+// import { styled } from '@mui/material/styles';
+// import Paper from '@mui/material/Paper';
+// import Grid from '@mui/material/Grid';
+import React from 'react';
+import { useTheme } from '@mui/material/styles';
+import Grid from '@mui/material/Grid';
+
+import Stack from "@mui/material/Stack";
+import Box from '@mui/material/Box';
+import Typography from "@mui/material/Typography";
+
+import CitySelector from "./CitySelector";
+import ImageGrid from "./ImageGrid";
+import CityDescription from "./CityDescription";
+
+export default function App() {
+  const [city, setCity] = useState("");
+
+  const isLandscape = useMediaQuery("(orientation: landscape)");
+
+  // Tema
+  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+  // Tema
+  const [theme, setTheme] = useState(
+    createTheme({
+      palette: {
+        mode: isDark ? "dark" : "light",
+      },
+    }),
+  );
+  // Tema
+  function toggleTheme() {
+    let t;
+    if (theme.palette.mode == "dark")
+      t = createTheme({ palette: { mode: "light" } });
+    else t = createTheme({ palette: { mode: "dark" } });
+    setTheme(t);
+  }
+
+
+  // Grid
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  
+  // Grid
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+  
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+
+      {/* ToolBar */}
+      <AppBar position="static">
+        <Toolbar>
+
+          <Box margin={1}>
+            <CitySelector city={city} setCity={setCity} />
+          </Box>
+
+          <Box sx={{ flexGrow: 1 }}></Box>
+
+          <IconButton onClick={toggleTheme} color="inherit" >
+            {theme.palette.mode === "dark" ? (
+              <Brightness7Icon />
+            ) : (
+              <Brightness4Icon />
+            )}
+          </IconButton>
+
+        </Toolbar>
+      </AppBar>
+
+      {/* Box che contiene descizione e immagini */}
+      <Box margin={1}>
+        <Grid container sx={{ height: '100vh', overflow: 'hidden' }}>
+          <Grid item xs={matches ? 12 : 8} sx={{ overflow: 'auto', maxHeight: matches ? 'calc(100vh - 300px)' : '100vh' }}>
+            {/* Contenuto della colonna sinistra */}
+            <ImageGrid city={city} setCity={setCity} />
+          </Grid>
+          <Grid item xs={matches ? 12 : 4} sx={{ overflow: 'auto', maxHeight: matches ? '300px' : '100vh', position: matches ? 'relative' : 'sticky', top: 0 }}>
+            {/* Contenuto della colonna destra */}
+            <CityDescription city={city} setCity={setCity} />
+          </Grid>
+        </Grid>
+      </Box>
+      
+    </ThemeProvider>
+        
+  );
+}
