@@ -573,6 +573,70 @@
     "cibo":[
       "sushi"
     ]
+  },
+  "Vienna": {
+  "nazione": "at",
+  "descrizione": "Vienna, capitale dell'Austria, è una città elegante e ricca di storia, famosa per la sua architettura imperiale, i suoi caffè storici e l'eredità musicale di compositori come Mozart, Beethoven e Strauss. Con palazzi sontuosi, musei di fama mondiale e una vivace scena culturale, Vienna offre un perfetto equilibrio tra tradizione e modernità.",
+  "attrazioni":[
+    "Palazzo di Schönbrunn",
+    "Cattedrale di Santo Stefano",
+    "Palazzo Imperiale Hofburg",
+    "Opera di Stato di Vienna",
+    "Museo di Storia dell'Arte",
+    "Museo di Storia Naturale",
+    "Belvedere",
+    "Prater",
+    "Hundertwasserhaus",
+    "Albertina",
+    "Naschmarkt",
+    "Parco Stadtpark"
+  ],
+  "cibo":[
+    "Wiener Schnitzel",
+    "Tafelspitz",
+    "Apfelstrudel",
+    "Sachertorte",
+    "Kaiserschmarrn",
+    "Gulasch viennese",
+    "Knödel",
+    "Frittatensuppe",
+    "Powidltascherl",
+    "Brettljause",
+    "Marillenknödel",
+    "Topfenstrudel"
+  ]
+  },
+  "Ravenna": {
+    "nazione": "it",
+    "descrizione": "Ravenna, situata in Emilia-Romagna, è una città celebre in tutto il mondo per i suoi straordinari mosaici bizantini, dichiarati Patrimonio dell'Umanità dall’UNESCO. Antica capitale dell’Impero Romano d’Occidente, conserva un patrimonio artistico e storico unico, unito a un’atmosfera tranquilla e accogliente.",
+    "attrazioni":[
+      "Basilica di San Vitale",
+      "Mausoleo di Galla Placidia",
+      "Battistero Neoniano",
+      "Basilica di Sant'Apollinare Nuovo",
+      "Basilica di Sant'Apollinare in Classe",
+      "Mausoleo di Teodorico",
+      "Museo Nazionale di Ravenna",
+      "Domus dei Tappeti di Pietra",
+      "Tomba di Dante",
+      "Piazza del Popolo",
+      "Museo Arcivescovile",
+      "Porto Corsini"
+    ],
+    "cibo":[
+      "Cappelletti romagnoli",
+      "Passatelli in brodo",
+      "Piadina romagnola",
+      "Strozzapreti",
+      "Tagliatelle al ragù",
+      "Anguilla alla marinara",
+      "Fritto misto di pesce",
+      "Squacquerone di Romagna",
+      "Ciambella romagnola",
+      "Zuppa inglese",
+      "Sangiovese di Romagna",
+      "Albana di Romagna"
+    ]
   }
-
+  
 }
