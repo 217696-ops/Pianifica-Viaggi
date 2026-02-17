@@ -27,7 +27,7 @@ const Citazioni = [
     autore:"Antonio Vivaldi"
   },
   {
-    citazione:"... .- .-.. .. - .. / -.. .- / -... ..- --. .-.. .. .- -. ---",
+    citazione:"... .- .-.. ..- - .. / -.. .- / -... ..- --. .-.. .. .- -. ---",
     autore:"Samuel Morse"
   },
   {
