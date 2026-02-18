@@ -122,7 +122,7 @@ async function getWeather(city, data, db) {
                     alignItems: 'center', 
                     justifyContent: 'center' 
                   }}>
-                  <img src={"./public/sunrise.svg"} alt={"Tramonto"} style={{ height: '2em' }}/>
+                  <img src={"./sunrise.svg"} alt={"Tramonto"} style={{ height: '2em' }}/>
                   <Typography variant="body1" marginLeft={1}>{alba}</Typography>
                 </Item>
               </Grid>
@@ -134,7 +134,7 @@ async function getWeather(city, data, db) {
                     alignItems: 'center', 
                     justifyContent: 'center' 
                   }}>
-                  <img src={"./public/sunset.svg"} alt={"Tramonto"} style={{ height: '2em' }}/>
+                  <img src={"./sunset.svg"} alt={"Tramonto"} style={{ height: '2em' }}/>
                   <Typography variant="body1" marginLeft={1}>{tramonto}</Typography>
                 </Item>
               </Grid>

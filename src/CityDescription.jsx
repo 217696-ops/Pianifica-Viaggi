@@ -76,7 +76,7 @@ async function getImageUrl(city, attraction) {
     // console.log(URL_immagine);
     return URL_immagine;
   } catch (e) {
-    return `../public/cityImage.jpg`;
+    return `../cityImage.jpg`;
   }
 }
 
@@ -142,7 +142,7 @@ export default function CityDescription({ city, pagina, setPagina, db }) {
           > */}
           <a href={creaLinkGoogleMaps(db[city]["attrazioni"], city)} target="_blank">
             <img
-              src={`../public/${city}/home.jpg`}
+              src={`../${city}/home.jpg`}
               alt={city}
               style={{
                 objectFit: "cover",
@@ -161,7 +161,7 @@ export default function CityDescription({ city, pagina, setPagina, db }) {
         </Box>
       ) : (
         <img
-          src={"../public/default.jpg"}
+          src={"../default.jpg"}
           alt={city}
           style={{
             objectFit: "cover",

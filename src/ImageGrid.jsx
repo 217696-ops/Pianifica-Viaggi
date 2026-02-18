@@ -36,7 +36,7 @@ async function getImageUrl(pagina, city, attraction) {
         // console.log(URL_immagine);
         return URL_immagine
       } catch (e) {
-        return `../public/attractionImage.jpg`;
+        return `../attractionImage.jpg`;
       }
     } else {
       try {
@@ -50,7 +50,7 @@ async function getImageUrl(pagina, city, attraction) {
         // console.log(URL_immagine);
         return URL_immagine
       } catch (e) {
-        return `../public/foodImage.jpg`;
+        return `../foodImage.jpg`;
       }
     }
   } 
@@ -67,7 +67,7 @@ async function getImageUrl(pagina, city, attraction) {
         // console.log(URL_immagine);
         return URL_immagine
       } catch (e) {
-        return `../public/cityImage.jpg`;
+        return `../cityImage.jpg`;
       }
     }
 }
@@ -100,7 +100,7 @@ export default function ImageGrid({city, setCity, pagina, db}) {
                   href={`https://www.google.com/maps/search/?api=1&query=${cibo}+${city}`} target="_blank">
                   <Item>
                     <img 
-                        src={`../public/${city}/${cibo}.jpg`}
+                        src={`../${city}/${cibo}.jpg`}
                         alt={cibo}
                         style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '16em', borderRadius: '10px' }} 
                         onError={async (e) => {
@@ -120,7 +120,7 @@ export default function ImageGrid({city, setCity, pagina, db}) {
                   href={`https://www.google.com/maps/search/?api=1&query=${attrazione}+${city}`} target="_blank">
                   <Item>
                     <img 
-                        src={`../public/${city}/${attrazione}.jpg`}
+                        src={`../${city}/${attrazione}.jpg`}
                         alt={attrazione}
                         style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '16em', borderRadius: '10px' }} 
                         onError={async (e) => {
@@ -140,7 +140,7 @@ export default function ImageGrid({city, setCity, pagina, db}) {
               {/* Elenco Città */}
               <Item>
                   <img 
-                    src={`../public/${city}/home.jpg`}
+                    src={`../${city}/home.jpg`}
                     alt={city}
                     style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '16em', borderRadius: '10px' }} 
                     onError={async (e) => {
