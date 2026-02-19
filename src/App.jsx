@@ -12,6 +12,8 @@ import Grid from '@mui/material/Grid';
 
 import Box from '@mui/material/Box';
 
+import { Analytics } from '@vercel/analytics/react'; // Vercel Analytics
+
 import CitySelector from "./CitySelector";
 import ImageGrid from "./ImageGrid";
 import CityDescription from "./CityDescription";
@@ -77,6 +79,7 @@ export default function App() {
           </Grid>
         </Grid>
       </Box>
+      <Analytics />
     </ThemeProvider>
   );
 }
