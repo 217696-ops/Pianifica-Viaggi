@@ -15,7 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 
-const AccessKey = {apiKey: import.meta.env.UNSPLASH_API_KEY};
+const AccessKey = import.meta.env.VITE_UNSPLASH_API_KEY;
 const SecretKey = "kJXk2RlmkkLJkyBr161RBCIqQjS5C6ZvbfDJ4jJG7yw";
 
 // selezione attrazione e creazione percorso

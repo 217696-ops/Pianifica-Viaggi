@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 
 import Box from '@mui/material/Box';
 
-import { Analytics } from '@vercel/analytics/react'; // Vercel Analytics
+import { Analytics } from '@vercel/analytics/react';
 
 import CitySelector from "./CitySelector";
 import ImageGrid from "./ImageGrid";
