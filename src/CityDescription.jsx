@@ -17,10 +17,10 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 
+
 const AccessKey = "b5CJx4NyEPDM9qyrKuxo2fheWCsR5mTEcN5Onb3CH8o"; //unisplash
 const SecretKey = "kJXk2RlmkkLJkyBr161RBCIqQjS5C6ZvbfDJ4jJG7yw";
 const client = new Mistral({ apiKey: import.meta.env.VITE_MISTRAL_TOKEN });
-//const client = new Mistral({ apiKey: "thyUI8Ud31NNKIQA54mJxtuZR3BpXGQw" }); 
 
 const Citazioni = [
   {
