@@ -1,22 +1,23 @@
 {
   "Firenze": {
+    "regione": "Italia",
     "nazione": "it",
     "descrizione": "Firenze, capoluogo della Toscana, ospita molti capolavori dell'arte e dell'architettura rinascimentale. Uno dei luoghi più celebri è il Duomo, la cattedrale con cupola di tegole progettata dal Brunelleschi e il campanile di Giotto. La Galleria dell'Accademia espone la scultura del David di Michelangelo mentre nella Galleria degli Uffizi si trovano La nascita di Venere di Botticelli e l’Annunciazione di Leonardo da Vinci.",
-    "attrazioni":[
-      "Basilica di Santa Maria Novella",
-      "Battistero di San Giovanni",
-      "Campanile di Giotto",   
-      "Cattedrale di Santa Croce di Firenze",
-      "Cattedrale di Santa Maria del Fiore",
-      "Galleria degli Uffizi", 
-      "Galleria dell'Accademia",
-      "Palazzo Pitti",      
-      "Palazzo Vecchio",
-      "Piazza della Signoria", 
-      "Piazzale Michelangelo",       
-      "Ponte Vecchio"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Basilica di Santa Maria Novella": "",
+      "Battistero di San Giovanni": "",
+      "Campanile di Giotto": "",
+      "Cattedrale di Santa Croce di Firenze": "",
+      "Cattedrale di Santa Maria del Fiore": "",
+      "Galleria degli Uffizi": "",
+      "Galleria dell'Accademia": "",
+      "Palazzo Pitti": "",
+      "Palazzo Vecchio": "",
+      "Piazza della Signoria": "",
+      "Piazzale Michelangelo": "",
+      "Ponte Vecchio": ""
+    },
+    "cibo": [
       "Bistecca alla fiorentina",
       "Ribollita",
       "Pappa al pomodoro",
@@ -32,23 +33,24 @@
     ]
   },
   "Napoli": {
+    "regione": "Italia",
     "nazione": "it",
     "descrizione": "Napoli è un comune italiano di 911'962 abitanti, terzo in Italia per popolazione, capoluogo della Regione Campania, dell'omonima città metropolitana e centro di una delle più popolose e densamente popolate aree metropolitane d'Europa.",
-    "attrazioni":[
-      "Castel dell'Ovo",
-      "Castel Sant'Elmo",
-      "Catacombe di San Gennaro",
-      "Certosa di San Martino",
-      "Chiesa del Gesù Nuovo",
-      "Galleria Umberto I",
-      "Maschio Angioino",
-      "Museo Archeologico Nazionale di Napoli",
-      "Palazzo Reale",
-      "Piazza del Plebiscito",
-      "Teatro San Carlo",
-      "Via San Gregorio Armeno"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Castel dell'Ovo": "",
+      "Castel Sant'Elmo": "",
+      "Catacombe di San Gennaro": "",
+      "Certosa di San Martino": "",
+      "Chiesa del Gesù Nuovo": "",
+      "Galleria Umberto I": "",
+      "Maschio Angioino": "",
+      "Museo Archeologico Nazionale di Napoli": "",
+      "Palazzo Reale": "",
+      "Piazza del Plebiscito": "",
+      "Teatro San Carlo": "",
+      "Via San Gregorio Armeno": ""
+    },
+    "cibo": [
       "Pizza Napoletana",
       "Sfogliatelle",
       "Pastiera Napoletana",
@@ -64,24 +66,25 @@
       "Casatiello"
     ]
   },
-  "Parma": {  
+  "Parma": {
+    "regione": "Italia",
     "nazione": "it",
     "descrizione": "Parma è una città universitaria dell'Emilia-Romagna, famosa per il Parmigiano e il prosciutto. Gli edifici romanici, tra cui la Cattedrale di Parma con i suoi affreschi e il Battistero in marmo rosa, adornano il centro storico. Il Teatro Regio, risalente al XIX secolo, ospita concerti di musica classica. La Galleria Nazionale, all'interno dell'imponente Palazzo della Pilotta, espone opere dei pittori Correggio e Canaletto.",
-    "attrazioni":[
-      "Battistero di Parma",
-      "Camera di San Paolo",
-      "Cattedrale di Parma",
-      "Chiesa della Steccata",
-      "Galleria Nazionale",
-      "Monastero di San Giovanni Evangelista",
-      "Museo di Storia Naturale",
-      "Palazzo del Governatore",
-      "Palazzo della Pilotta",
-      "Parco Ducale",
-      "Santuario di San Francesco del Prato",
-      "Teatro Regio"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Battistero di Parma": "",
+      "Camera di San Paolo": "",
+      "Cattedrale di Parma": "",
+      "Chiesa della Steccata": "",
+      "Galleria Nazionale": "",
+      "Monastero di San Giovanni Evangelista": "",
+      "Museo di Storia Naturale": "",
+      "Palazzo del Governatore": "",
+      "Palazzo della Pilotta": "",
+      "Parco Ducale": "",
+      "Santuario di San Francesco del Prato": "",
+      "Teatro Regio": ""
+    },
+    "cibo": [
       "Prosciutto di Parma",
       "Parmigiano Reggiano",
       "Torta fritta",
@@ -96,23 +99,24 @@
     ]
   },
   "Roma": {
+    "regione": "Italia",
     "nazione": "it",
     "descrizione": "Roma, capitale dell’Italia, è una grande città cosmopolita con una storia artistica, architettonica e culturale che ha influenzato tutto il mondo e che risale a quasi 3000 anni fa. Le antiche rovine come il Foro e il Colosseo testimoniano la potenza dell’antico Impero romano. Nella Città del Vaticano, sede della Chiesa Cattolica, si trovano la Basilica di San Pietro e i Musei Vaticani, che ospitano capolavori come la Cappella Sistina affrescata da Michelangelo.",
-    "attrazioni":[
-      "Basilica di San Pietro",
-      "Cappella Sistina",
-      "Castel Sant’Angelo",
-      "Colosseo",
-      "Fontana di Trevi",
-      "Foro Romano",
-      "Pantheon",
-      "Piazza del Campidoglio",
-      "Piazza di Spagna",
-      "Piazza Navona",
-      "Piazza San Pietro",
-      "Piazza Venezia"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Basilica di San Pietro": "",
+      "Cappella Sistina": "",
+      "Castel Sant’Angelo": "",
+      "Colosseo": "",
+      "Fontana di Trevi": "",
+      "Foro Romano": "",
+      "Pantheon": "",
+      "Piazza del Campidoglio": "",
+      "Piazza di Spagna": "",
+      "Piazza Navona": "",
+      "Piazza San Pietro": "",
+      "Piazza Venezia": ""
+    },
+    "cibo": [
       "Spaghetti alla Carbonara",
       "Cacio e Pepe",
       "Saltimbocca alla Romana",
@@ -127,23 +131,24 @@
     ]
   },
   "Venezia": {
+    "regione": "Italia",
     "nazione": "it",
     "descrizione": "Venezia, il capoluogo della regione Veneto, è adagiata su più di 100 piccole isole all'interno di una laguna nel mare Adriatico. In questa città non esistono strade ma canali, tra cui il Canal Grande, fiancheggiato da palazzi rinascimentali e gotici. Sulla piazza centrale, piazza San Marco, sorgono la Basilica di San Marco, arricchita da mosaici bizantini, e il campanile di San Marco, da cui si possono ammirare i tetti rossi della città.",
-    "attrazioni":[
-      "Basilica di San Marco",
-      "Giardini della Biennale",
-      "Basilica di Santa Maria Gloriosa dei Frari",
-      "Galleria dell'Accademia",
-      "Isola di Burano",
-      "Isola di Murano",
-      "Palazzo Ducale",
-      "Piazza San Marco",
-      "Ponte dei Sospiri",
-      "Ponte di Rialto",
-      "Scuola Grande di San Rocco",
-      "Teatro La Fenice"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Basilica di San Marco": "",
+      "Giardini della Biennale": "",
+      "Basilica di Santa Maria Gloriosa dei Frari": "",
+      "Galleria dell'Accademia": "",
+      "Isola di Burano": "",
+      "Isola di Murano": "",
+      "Palazzo Ducale": "",
+      "Piazza San Marco": "",
+      "Ponte dei Sospiri": "",
+      "Ponte di Rialto": "",
+      "Scuola Grande di San Rocco": "",
+      "Teatro La Fenice": ""
+    },
+    "cibo": [
       "Risotto al Nero di Seppia",
       "Baccalà Mantecato",
       "Fegato alla Veneziana",
@@ -157,151 +162,58 @@
       "Fritto Misto alla Veneziana"
     ]
   },
-  "Modena": {
+  "Venezia": {
+    "regione": "Italia",
     "nazione": "it",
-    "descrizione": "Modena è un comune italiano di 184'402 abitanti, capoluogo dell'omonima provincia in Emilia-Romagna. Nelle fonti le prime notizie su Modena risalgono alla guerra tra Romani e Boi che abitavano nell'area. Il centro fungeva da presidio militare anche prima della fondazione ufficiale della città da parte dei romani.",
-    "attrazioni":[
-      "Museo Enzo Ferrari",
-      "Duomo di Modena",
-      "Torre Ghirlandina",
-      "Piazza Grande",
-      "Mercato Storico Albinelli",
-      "Galleria Estense",
-      "Palazzo Ducale",
-      "Museo della Figurina",
-      "Acetaia Comunale",
-      "Casa Museo Luciano Pavarotti",
-      "Museo Ferrari Maranello",
-      "Palazzo Comunale"
-    ],
-    "cibo":[
-      "Tortellini in brodo",
-      "Gnocco fritto",
-      "Cotechino",
-      "Zampone",
-      "Tigelle",
-      "Parmigiano Reggiano",
-      "Aceto balsamico di Modena",
-      "Borlengo",
-      "Torta Barozzi",
-      "Bensone",
-      "Tortelloni",
-      "Rosette",
-      "Passatelli in Brodo"
-    ]
-  },
-  "Tokyo": {
-    "nazione": "jp",
-    "descrizione": "Tokyo, la popolosa capitale del Giappone, è una città che mescola elementi tradizionali e ultramoderni, come si può intuire osservando i templi storici che sorgono accanto ai grattacieli con le luci al neon. Lo sfarzoso santuario shintoista Meiji è famoso per l'imponente porta di ingresso e i boschi circostanti. Il Palazzo imperiale sorge tra vasti giardini pubblici. I numerosi musei della città espongono collezioni che vanno dall’arte classica del Museo nazionale di Tokyo a teatri kabuki ricostruiti come quello all'Edo-Tokyo Museum.",
-    "attrazioni":[
-      "Sensō-ji",
-      "Santuario Meiji",
-      "Tokyo Tower",
-      "Palazzo imperiale",
-      "Tokyo Skytree",
-      "Parco di Ueno",
-      "Shibuya Scramble Crossing",
-      "Shinjuku Gyoen National Garden",
-      "Palazzo del governo",
-      "Golden Gai",
-      "Akihabara Electric Town",
-      "Museo Ghibli",
-      "Mercato del Pesce di Tsukiji",
-      "Isola Articiciale di Odaiba",
-      "Tempio Zojo-ji",
-      "Templi Hongan-ji",
-      "Tempio Reiyukai",
-      "Santuario Yushima Tenjin",
-      "Santuario Kanda Myojin",
-      "Tempio Jindai-ji"
-    ],
-    "cibo":[
-      "Sushi",
-      "Sashimi",
-      "Tempura",
-      "Ramen",
-      "Yakitori",
-      "Okonomiyaki",
-      "Takoyaki",
-      "Udon",
-      "Tonkatsu",
-      "Unagi",
-      "Sukiyaki",
-      "Taiyaki"
-    ]
-  },
-  "Kyoto": {
-    "nazione": "jp",
-    "descrizione": "Kyoto, un tempo capitale del Giappone, Kyoto è una città dell'isola di Honshu. È famosa per i numerosi templi classici buddisti, per i giardini, i palazzi imperiali, i santuari shintoisti e le case di legno tradizionali. La città è nota anche per le sue tradizioni, per esempio la cena kaiseki, che consiste in molte portate preparate secondo regole precise, e le geishe, donne intrattenitrici che si trovano principalmente nel quartiere di Gion.",
-    "attrazioni": [
-      "Kinkaku-ji",
-      "Fushimi Inari-taisha",
-      "Kiyomizu-dera",
-      "Arashiyama",
-      "Castello di Nijo",
-      "Gion",
-      "Tetsugaku No Michi",
-      "Sanjusangen-do"
-    ],
-    "cibo":[
-      "Kaiseki Ryori",
-      "Yudofu",
-      "Obanzai",
-      "Saba-zushi",
-      "Yatsuhashi",
-      "Kamonanban",
-      "Somen",
-      "Kyoto Ramen",
-      "Yuba",
-      "Matcha Parfait"
-    ]
-  },
-  "Osaka": {
-    "nazione": "jp",
-    "descrizione": "Osaka è una grande città portuale e polo commerciale dell'isola giapponese di Honshu. È famosa per l’architettura, la vita notturna e il sostanzioso cibo di strada. Il monumento storico principale della città è il castello di Osaka, che risale allo shogunato del XVI secolo e ha subito diversi restauri. Il castello è circondato da un fossato e un parco con alberi di susine, pesche e ciliegie. Il Sumiyoshi-taisha è uno dei santuari shintoisti più antichi del Giappone",
-    "attrazioni": [
-      "Castello di Osaka",
-      "Dotonbori",
-      "Universal Studios Japan",
-      "Acquario di Osaka (Kaiyukan)",
-      "Umeda Sky Building",
-      "Tempozan Ferris Wheel",
-      "Osaka Science Museum"
-    ],
-    "cibo":[
-      "Takoyaki",
-      "Okonomiyaki",
-      "Kushikatsu",
-      "Horumon-yaki",
-      "Negiyaki",
-      "Kitsune Udon",
-      "Fugu",
-      "Butaman",
-      "Katsu Curry",
-      "Tecchiri",
-      "Yakiniku",
-      "Kori-gashi"
+    "descrizione": "Venezia, il capoluogo della regione Veneto, è adagiata su più di 100 piccole isole all'interno di una laguna nel mare Adriatico. In questa città non esistono strade ma canali, tra cui il Canal Grande, fiancheggiato da palazzi rinascimentali e gotici. Sulla piazza centrale, piazza San Marco, sorgono la Basilica di San Marco, arricchita da mosaici bizantini, e il campanile di San Marco, da cui si possono ammirare i tetti rossi della città.",
+    "attrazioni": {
+      "Basilica di San Marco": "",
+      "Giardini della Biennale": "",
+      "Basilica di Santa Maria Gloriosa dei Frari": "",
+      "Galleria dell'Accademia": "",
+      "Isola di Burano": "",
+      "Isola di Murano": "",
+      "Palazzo Ducale": "",
+      "Piazza San Marco": "",
+      "Ponte dei Sospiri": "",
+      "Ponte di Rialto": "",
+      "Scuola Grande di San Rocco": "",
+      "Teatro La Fenice": ""
+    },
+    "cibo": [
+      "Risotto al Nero di Seppia",
+      "Baccalà Mantecato",
+      "Fegato alla Veneziana",
+      "Sarde in Saor",
+      "Risotto al Pesce",
+      "Bigoli in Salsa",
+      "Risi e Bisi",
+      "Mołéche",
+      "Baicoli",
+      "Tiramisù",
+      "Fritto Misto alla Veneziana"
     ]
   },
   "Bologna": {
+    "regione": "Italia",
     "nazione": "it",
     "descrizione": "Bologna, la capitale della regione Emilia-Romagna, è famosa per la sua antica università, le sue torri medievali e la sua cucina rinomata. Conosciuta come la Dotta, la Grassa e la Rossa, Bologna offre una miscela affascinante di storia, cultura e gastronomia.",
-    "attrazioni":[
-      "Piazza Maggiore",
-      "Due Torri (Torre degli Asinelli e Torre della Garisenda)",
-      "Basilica di San Petronio",
-      "Fontana del Nettuno",
-      "Archiginnasio",
-      "Museo Civico Archeologico",
-      "Pinacoteca Nazionale",
-      "Basilica di Santo Stefano",
-      "Portico di San Luca",
-      "San Luca",
-      "Museo della Storia",
-      "Museo Morandi",
-      "Giardini Margherita"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Piazza Maggiore": "",
+      "Due Torri (Torre degli Asinelli e Torre della Garisenda)": "",
+      "Basilica di San Petronio": "",
+      "Fontana del Nettuno": "",
+      "Archiginnasio": "",
+      "Museo Civico Archeologico": "",
+      "Pinacoteca Nazionale": "",
+      "Basilica di Santo Stefano": "",
+      "Portico di San Luca": "",
+      "San Luca": "",
+      "Museo della Storia": "",
+      "Museo Morandi": "",
+      "Giardini Margherita": ""
+    },
+    "cibo": [
       "Tagliatelle al ragù",
       "Lasagne alla bolognese",
       "Mortadella di Bologna",
@@ -311,55 +223,25 @@
       "Torta di Riso"
     ]
   },
-  "Bangkok": {
-    "nazione": "th",
-    "descrizione": "Bangkok, la capitale della Thailandia, è una città vivace e affascinante, ricca di cultura, storia e vibrante vita urbana. Conosciuta per i suoi templi dorati, i mercati galleggianti, la deliziosa cucina e la frenetica vita notturna, Bangkok è una destinazione che affascina i visitatori di tutto il mondo.",
-    "attrazioni":[
-      "Wat Phra Kaew (Tempio del Buddha di Smeraldo)",
-      "Wat Arun (Tempio Alba)",
-      "Wat Pho (Tempio del Buddha sdraiato)",
-      "Gran Palazzo Reale",
-      "Mercati galleggianti di Damnoen Saduak e Amphawa",
-      "Chao Phraya River e i suoi canali",
-      "Chatuchak Weekend Market",
-      "Khao San Road",
-      "MBK Center",
-      "Jim Thompson House",
-      "Lumpini Park",
-      "Terminal 21"
-    ],
-    "cibo":[
-      "Pad Thai",
-      "Tom Yum Goong (Zuppa di gamberi piccante e acida)",
-      "Som Tum (Insalata di papaya piccante)",
-      "Massaman Curry",
-      "Gaeng Keow Wan (Curry verde)",
-      "Khao Pad (Riso fritto)",
-      "Mango Sticky Rice",
-      "Tom Kha Gai (Zuppa di cocco e pollo)",
-      "Pad Krapow Moo Saap (Maiale al basilico)",
-      "Kai Med Ma Muang (Pollo con anacardi)",
-      "Khanom Buang (Crepes thailandesi)"
-    ]
-  },
   "Torino": {
+    "regione": "Italia",
     "nazione": "it",
     "descrizione": "Torino, capoluogo del Piemonte, è una città elegante e sofisticata, famosa per la sua architettura barocca, i suoi caffè storici e la sua ricca scena culturale. Conosciuta come il centro dell'industria automobilistica italiana, Torino è anche un importante centro per l'arte e la cultura, con numerosi musei, gallerie e teatri.",
-    "attrazioni":[
-      "Mole Antonelliana",
-      "Museo Egizio",
-      "Palazzo Reale di Torino",
-      "Basilica di Superga",
-      "Piazza Castello",
-      "Parco del Valentino",
-      "Museo Nazionale del Cinema",
-      "Duomo di Torino",
-      "Museo dell'Automobile",
-      "Piazza San Carlo",
-      "GAM - Galleria Civica d'Arte Moderna e Contemporanea",
-      "Lingotto"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Mole Antonelliana": "",
+      "Museo Egizio": "",
+      "Palazzo Reale di Torino": "",
+      "Basilica di Superga": "",
+      "Piazza Castello": "",
+      "Parco del Valentino": "",
+      "Museo Nazionale del Cinema": "",
+      "Duomo di Torino": "",
+      "Museo dell'Automobile": "",
+      "Piazza San Carlo": "",
+      "GAM - Galleria Civica d'Arte Moderna e Contemporanea": "",
+      "Lingotto": ""
+    },
+    "cibo": [
       "Bagna cauda",
       "Vitello tonnato",
       "Agnolotti",
@@ -375,84 +257,172 @@
       "Panna cotta"
     ]
   },
-  "Alicante": {
-    "nazione": "es",
-    "descrizione": "Alicante, situata sulla costa orientale della Spagna, è una vivace città portuale nota per le sue splendide spiagge, il clima mediterraneo e il suo ricco patrimonio storico. Con una combinazione di moderne strutture turistiche e affascinanti siti storici, Alicante è una destinazione ideale per i visitatori in cerca di relax e cultura.",
-    "attrazioni":[
-      "Castello di Santa Barbara",
-      "Esplanade of Spain (Explanada de España)",
-      "Basilica di Santa Maria",
-      "Museo Archeologico Provinciale di Alicante (MARQ)",
-      "Mercato Centrale",
-      "Porto di Alicante",
-      "Spiaggia del Postiguet",
-      "Isola di Tabarca",
-      "Museo d'Arte Contemporanea di Alicante (MACA)",
-      "Piazza Gabriel Miró",
-      "Parco Canalejas",
-      "Calle de las Setas"
-    ],
-    "cibo":[
-      "Paella Alicantina",
-      "Arroz a banda",
-      "Turrón",
-      "Caldero",
-      "Gambas rojas de Denia",
-      "Coca amb tonyina",
-      "Esgarraet",
-      "Pericana",
-      "Salazones",
-      "Helado de turrón",
-      "Horchata",
-      "Churros con chocolate"
-    ]
-  },
-  "Reggio Emilia": {
-    "nazione": "it",
-    "descrizione": "Reggio Emilia, ufficialmente Reggio nell'Emilia, è un comune italiano di 171 845 abitanti, capoluogo dell'omonima provincia in Emilia-Romagna.",
-    "attrazioni":[
-      "Niente"
-    ],
-    "cibo":[
-      "Erbazzone"
-    ]
-  },
   "Bugliano": {
+    "regione": "Italia",
     "nazione": "it",
     "descrizione": "Bugliano, ridente cittadina che sorge nel comune pisano. Famosa in tutto il Bel Paese per le sue iniziative avanguardistiche come la recente abolizione dello 'Ius Primae Noctis' o l'invenzione della celebre disciplina olimpica del 'Lancio del Gatto'. Bugliano è nota ai più per essere fieramente il primo comune denutrizzato in Italia.",
-    "attrazioni":[
-      "Via C'è Ghevara",
-      "Museo del Lancio del Gatto",
-      "Museo del Comunismo",
-      "Chiesa di Santa Fernanda",
-      "Chiesa di San Teodoldo",
-      "Ristorante Il Papero Offeso",
-      "Accademia della Nutria"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Via C'è Ghevara": "",
+      "Museo del Lancio del Gatto": "",
+      "Museo del Comunismo": "",
+      "Chiesa di Santa Fernanda": "",
+      "Chiesa di San Teodoldo": "",
+      "Ristorante Il Papero Offeso": "",
+      "Accademia della Nutria": ""
+    },
+    "cibo": [
       "Nutria al Cioccolato",
       "Braciola d'Orso",
       "Grigliata di Nutria"
     ]
   },
+  "Tokyo": {
+    "regione": "Asia",
+    "nazione": "jp",
+    "descrizione": "Tokyo, la popolosa capitale del Giappone, è una città che mescola elementi tradizionali e ultramoderni, come si può intuire osservando i templi storici che sorgono accanto ai grattacieli con le luci al neon. Lo sfarzoso santuario shintoista Meiji è famoso per l'imponente porta di ingresso e i boschi circostanti. Il Palazzo imperiale sorge tra vasti giardini pubblici. I numerosi musei della città espongono collezioni che vanno dall’arte classica del Museo nazionale di Tokyo a teatri kabuki ricostruiti come quello all'Edo-Tokyo Museum.",
+    "attrazioni": {
+      "Sensō-ji": "",
+      "Santuario Meiji": "",
+      "Tokyo Tower": "",
+      "Palazzo imperiale": "",
+      "Tokyo Skytree": "",
+      "Parco di Ueno": "",
+      "Shibuya Scramble Crossing": "",
+      "Shinjuku Gyoen National Garden": "",
+      "Palazzo del governo": "",
+      "Golden Gai": "",
+      "Akihabara Electric Town": "",
+      "Museo Ghibli": "",
+      "Mercato del Pesce di Tsukiji": "",
+      "Isola Articiciale di Odaiba": "",
+      "Tempio Zojo-ji": "",
+      "Templi Hongan-ji": "",
+      "Tempio Reiyukai": "",
+      "Santuario Yushima Tenjin": "",
+      "Santuario Kanda Myojin": "",
+      "Tempio Jindai-ji": ""
+    },
+    "cibo": [
+      "Sushi",
+      "Sashimi",
+      "Tempura",
+      "Ramen",
+      "Yakitori",
+      "Okonomiyaki",
+      "Takoyaki",
+      "Udon",
+      "Tonkatsu",
+      "Unagi",
+      "Sukiyaki",
+      "Taiyaki"
+    ]
+  },
+  "Kyoto": {
+    "regione": "Asia",
+    "nazione": "jp",
+    "descrizione": "Kyoto, un tempo capitale del Giappone, Kyoto è una città dell'isola di Honshu. È famosa per i numerosi templi classici buddisti, per i giardini, i palazzi imperiali, i santuari shintoisti e le case di legno tradizionali. La città è nota anche per le sue tradizioni, per esempio la cena kaiseki, che consiste in molte portate preparate secondo regole precise, e le geishe, donne intrattenitrici che si trovano principalmente nel quartiere di Gion.",
+    "attrazioni": {
+      "Kinkaku-ji": "",
+      "Fushimi Inari-taisha": "",
+      "Kiyomizu-dera": "",
+      "Arashiyama": "",
+      "Castello di Nijo": "",
+      "Gion": "",
+      "Tetsugaku No Michi": "",
+      "Sanjusangen-do": ""
+    },
+    "cibo": [
+      "Kaiseki Ryori",
+      "Yudofu",
+      "Obanzai",
+      "Saba-zushi",
+      "Yatsuhashi",
+      "Kamonanban",
+      "Somen",
+      "Kyoto Ramen",
+      "Yuba",
+      "Matcha Parfait"
+    ]
+  },
+  "Osaka": {
+    "regione": "Asia",
+    "nazione": "jp",
+    "descrizione": "Osaka è una grande città portuale e polo commerciale dell'isola giapponese di Honshu. È famosa per l’architettura, la vita notturna e il sostanzioso cibo di strada. Il monumento storico principale della città è il castello di Osaka, che risale allo shogunato del XVI secolo e ha subito diversi restauri. Il castello è circondato da un fossato e un parco con alberi di susine, pesche e ciliegie. Il Sumiyoshi-taisha è uno dei santuari shintoisti più antichi del Giappone",
+    "attrazioni": {
+      "Castello di Osaka": "",
+      "Dotonbori": "",
+      "Universal Studios Japan": "",
+      "Acquario di Osaka (Kaiyukan)": "",
+      "Umeda Sky Building": "",
+      "Tempozan Ferris Wheel": "",
+      "Osaka Science Museum": ""
+    },
+    "cibo": [
+      "Takoyaki",
+      "Okonomiyaki",
+      "Kushikatsu",
+      "Horumon-yaki",
+      "Negiyaki",
+      "Kitsune Udon",
+      "Fugu",
+      "Butaman",
+      "Katsu Curry",
+      "Tecchiri",
+      "Yakiniku",
+      "Kori-gashi"
+    ]
+  },
+  "Bangkok": {
+    "regione": "Asia",
+    "nazione": "th",
+    "descrizione": "Bangkok, la capitale della Thailandia, è una città vivace e affascinante, ricca di cultura, storia e vibrante vita urbana. Conosciuta per i suoi templi dorati, i mercati galleggianti, la deliziosa cucina e la frenetica vita notturna, Bangkok è una destinazione che affascina i visitatori di tutto il mondo.",
+    "attrazioni": {
+      "Wat Phra Kaew (Tempio del Buddha di Smeraldo)": "",
+      "Wat Arun (Tempio Alba)": "",
+      "Wat Pho (Tempio del Buddha sdraiato)": "",
+      "Gran Palazzo Reale": "",
+      "Mercati galleggianti di Damnoen Saduak e Amphawa": "",
+      "Chao Phraya River e i suoi canali": "",
+      "Chatuchak Weekend Market": "",
+      "Khao San Road": "",
+      "MBK Center": "",
+      "Jim Thompson House": "",
+      "Lumpini Park": "",
+      "Terminal 21": ""
+    },
+    "cibo": [
+      "Pad Thai",
+      "Tom Yum Goong (Zuppa di gamberi piccante e acida)",
+      "Som Tum (Insalata di papaya piccante)",
+      "Massaman Curry",
+      "Gaeng Keow Wan (Curry verde)",
+      "Khao Pad (Riso fritto)",
+      "Mango Sticky Rice",
+      "Tom Kha Gai (Zuppa di cocco e pollo)",
+      "Pad Krapow Moo Saap (Maiale al basilico)",
+      "Kai Med Ma Muang (Pollo con anacardi)",
+      "Khanom Buang (Crepes thailandesi)"
+    ]
+  },
   "Londra": {
+    "regione": "Europa",
     "nazione": "gb",
-    "descrizione": "Londra, la capitale del Regno Unito, è una delle città più cosmopolite e culturalmente diverse al mondo. Conosciuta per la sua ricca storia, i suoi iconici monumenti, i suoi parchi spettacolari e la sua vivace scena culturale, Londra è una destinazione turistica imperdibile che offre qualcosa per tutti i gusti. Londra vanta il titolo di Borgo più Bello d'Italia. Londra è orgogliosamente gemellata con il Comune di Bugliano.",
-    "attrazioni":[
-      "Big Ben",
-      "Torre di Londra",
-      "Tower Bridge",
-      "Palazzo di Westminster",
-      "Abbazia di Westminster",
-      "British Museum",
-      "National Gallery",
-      "London Eye",
-      "Piccadilly Circus",
-      "Museo di Scienze Naturali",
-      "Hyde Park",
-      "Camden Market"
-    ],
-    "cibo":[
+    "descrizione": "Londra, la capitale del Regno Unito, è una delle città più cosmopolite e culturalmente diverse al mondo. Conosciuta per la sua ricca storia, i suoi iconici monumenti, i suoi parchi spettacolari e la sua vivace scena culturale, Londra è una destinazione turistica imperdibile che offre qualcosa per tutti i gusti. Londra vanta il titolo di Borgo più Bello d'Italia secondo la guida di Bea. Londra è orgogliosamente gemellata con il Comune di Bugliano.",
+    "attrazioni": {
+      "Big Ben": "",
+      "Torre di Londra": "",
+      "Tower Bridge": "",
+      "Palazzo di Westminster": "",
+      "Abbazia di Westminster": "",
+      "British Museum": "",
+      "National Gallery": "",
+      "London Eye": "",
+      "Piccadilly Circus": "",
+      "Museo di Scienze Naturali": "",
+      "Hyde Park": "",
+      "Camden Market": ""
+    },
+    "cibo": [
       "Fish and Chips",
       "Pie and Mash",
       "Full English Breakfast",
@@ -466,23 +436,24 @@
     ]
   },
   "Barcellona": {
+    "regione": "Europa",
     "nazione": "es",
     "descrizione": "Barcellona, la vibrante capitale della Catalogna, è una città famosa per la sua architettura modernista, le sue spiagge sabbiose e la sua vivace scena culturale. Con le sue strade animate, i suoi edifici iconici progettati da Antoni Gaudí e la sua ricca storia, Barcellona è una delle destinazioni più affascinanti e popolari in Europa.",
-    "attrazioni":[
-      "Sagrada Familia",
-      "Parc Güell",
-      "Casa Batlló",
-      "Casa Milà (La Pedrera)",
-      "La Rambla",
-      "Barri Gòtic",
-      "Cattedrale di Barcellona",
-      "Museo Picasso",
-      "Montjuïc",
-      "Camp Nou",
-      "Mercato della Boqueria",
-      "Port Vell"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Sagrada Familia": "",
+      "Parc Güell": "",
+      "Casa Batlló": "",
+      "Casa Milà (La Pedrera)": "",
+      "La Rambla": "",
+      "Barri Gòtic": "",
+      "Cattedrale di Barcellona": "",
+      "Museo Picasso": "",
+      "Montjuïc": "",
+      "Camp Nou": "",
+      "Mercato della Boqueria": "",
+      "Port Vell": ""
+    },
+    "cibo": [
       "Paella",
       "Tapas",
       "Pan con tomate",
@@ -498,23 +469,24 @@
     ]
   },
   "Parigi": {
+    "regione": "Europa",
     "nazione": "fr",
     "descrizione": "Parigi, la capitale della Francia, è una delle città più affascinanti e romantiche del mondo, conosciuta per la sua ricca storia, l'arte, la moda e la gastronomia. Con i suoi iconici monumenti, i suoi musei di fama mondiale e i suoi incantevoli quartieri, Parigi è una destinazione imperdibile per i viaggiatori di tutto il mondo.",
-    "attrazioni":[
-      "Torre Eiffel",
-      "Museo del Louvre",
-      "Cattedrale di Notre-Dame",
-      "Basilica del Sacro Cuore",
-      "Arco di Trionfo",
-      "Champs-Élysées",
-      "Museo d'Orsay",
-      "Quartiere Latino",
-      "Montmartre",
-      "Palazzo di Versailles",
-      "Centro Pompidou",
-      "Jardin du Luxembourg"
-    ],
-    "cibo":[
+    "attrazioni": {
+      "Torre Eiffel": "",
+      "Museo del Louvre": "",
+      "Cattedrale di Notre-Dame": "",
+      "Basilica del Sacro Cuore": "",
+      "Arco di Trionfo": "",
+      "Champs-Élysées": "",
+      "Museo d'Orsay": "",
+      "Quartiere Latino": "",
+      "Montmartre": "",
+      "Palazzo di Versailles": "",
+      "Centro Pompidou": "",
+      "Jardin du Luxembourg": ""
+    },
+    "cibo": [
       "Baguette",
       "Croissant",
       "Escargot",

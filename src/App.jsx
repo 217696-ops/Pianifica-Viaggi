@@ -23,6 +23,12 @@ export default function App() {
 
   const [city, setCity] = useState('');
   const [pagina, setPagina] = useState('attrazioni');
+  const [attrazione, setAttrazione] = useState('');
+
+  // Prendo lista regioni
+  const tutte_regioni = Object.values(db).map(citta => citta.regione);
+  const elenco_regioni = [...new Set(tutte_regioni)];
+  elenco_regioni.sort();
 
   // Tema
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
@@ -47,10 +53,13 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      
+
+      {/* Selettore Regione/Città */}
         <CitySelector 
           city={city} 
           setCity={setCity} 
+          attrazione={attrazione} 
+          setAttrazione={setAttrazione} 
           pagina={pagina} 
           setPagina={setPagina} 
           theme={theme}
@@ -62,7 +71,12 @@ export default function App() {
         <Grid container spacing={1} direction="row-reverse">
           <Grid item sm={3}>            
             <Item>
-              <CityDescription city={city} pagina={pagina} setPagina={setPagina} db={db}/>
+              {/*se la city è una regione allora descrizione di default (citazioni)*/}
+              {elenco_regioni.includes(city) ? (
+                <CityDescription city='' attrazione ='' pagina={pagina} setPagina={setPagina} db={db}/>
+              ):(
+                <CityDescription city={city} attrazione={attrazione} pagina={pagina} setPagina={setPagina} db={db}/> 
+              )}              
             </Item>            
           </Grid>
           <Grid item sm={9}>            
@@ -73,8 +87,8 @@ export default function App() {
                 background: 'none',
                 height: '100%' ,
                 boxShadow: 'none'
-              }}>              
-              <ImageGrid city={city} setCity={setCity} pagina={pagina} db={db} />             
+              }}>            
+              <ImageGrid city={city} setCity={setCity} attrazione={attrazione} setAttrazione={setAttrazione} pagina={pagina} db={db} />           
             </Item>            
           </Grid>
         </Grid>
