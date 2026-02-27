@@ -16,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const AccessKey = import.meta.env.VITE_UNSPLASH_API_KEY;
-const SecretKey = "kJXk2RlmkkLJkyBr161RBCIqQjS5C6ZvbfDJ4jJG7yw";
+const SecretKey = import.meta.env.VITE_SECREY_KEY;
 
 // selezione attrazione e creazione percorso
 // https://www.google.com/maps/dir/Colosseo/Pantheon/Vaticano
@@ -29,7 +29,7 @@ async function getImageUrl(pagina, city, attraction) {
         const immagine = attraction ;//+ '+' + city;
         const response = await fetch(
           `https://api.unsplash.com/search/photos?query=${immagine}&client_id=${AccessKey}`);
-        const output = await response.json();
+        // const output = await response.json();
         // da 0 a 9
         const URL_immagine = output.results[0].urls.regular;
         // console.log(URL_immagine);
@@ -60,7 +60,7 @@ async function getImageUrl(pagina, city, attraction) {
         const response = await fetch(
           `https://api.unsplash.com/search/photos?query=${immagine}&client_id=${AccessKey}`);
         const output = await response.json();
-        console.log(output);
+        // console.log(output);
         // da 0 a 9
         const URL_immagine = output.results[0].urls.regular;
         // console.log(URL_immagine);

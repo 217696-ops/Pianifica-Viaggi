@@ -19,7 +19,7 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 
 
 const AccessKey = import.meta.env.VITE_UNSPLASH_API_KEY;
-const SecretKey = "kJXk2RlmkkLJkyBr161RBCIqQjS5C6ZvbfDJ4jJG7yw";
+const SecretKey = import.meta.env.VITE_SECREY_KEY;
 const client = new Mistral({ apiKey: import.meta.env.VITE_MISTRAL_TOKEN });
 
 const Citazioni = [
