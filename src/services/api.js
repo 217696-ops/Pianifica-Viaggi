@@ -48,3 +48,39 @@ export const fetchFoodDescription = (city, food) => getMistralDescription(
   "Sei un esperto di cucina di tutto il mondo. Scrivi una descrizione breve e accattivante (massimo 3 frasi) del cibo nella città fornita, spiegando cos'è e facendomi assagiare il piatto con le parole.",
   `Parlami di ${food} in ${city}`
 );
+
+export async function generateCityJSON(cityName) {
+  const promptSys = `Sei un generatore di dati JSON. Devi generare i dati turistici per una città fornita dall'utente.
+Devi rispondere ESCLUSIVAMENTE con un oggetto JSON valido, senza testo prima o dopo, senza formattazione markdown (niente \`\`\`json).
+Usa esattamente questa struttura:
+{
+  "regione": "Nome del continente o Italia",
+  "nazione": "codice nazione 2 lettere minuscole (es. it, fr, us)",
+  "descrizione": "",
+  "attrazioni": {
+    "Nome Attrazione 1": "",
+    "Nome Attrazione 2": "",
+    "Nome Attrazione 3": ""
+  },
+  "cibo": {
+    "Piatto tipico 1": "",
+    "Piatto tipico 2": "",
+    "Piatto tipico 3": ""
+  }
+}
+Inserisci almeno 8-10 attrazioni e 6-8 piatti tipici. Per i valori delle attrazioni metti la stringa "Descrizione" (così ci penserà l'altro modulo a generarla), per i valori del cibo metti una stringa vuota "".`;
+
+  try {
+    const response = await getMistralDescription(promptSys, `Genera il JSON per la città: ${cityName}`);
+
+    // Mistral a volte aggiunge i backtick del markdown anche se gli diciamo di non farlo.
+    // Puliamo la stringa per sicurezza prima di farne il parsing.
+    let cleanJsonString = response.replace(/```json/g, '').replace(/```/g, '').trim();
+
+    const parsedData = JSON.parse(cleanJsonString);
+    return parsedData;
+  } catch (error) {
+    console.error("Errore nella generazione o nel parsing del JSON:", error);
+    return null;
+  }
+}

@@ -11,8 +11,9 @@ import { Analytics } from '@vercel/analytics/react';
 import CitySelector from "./components/CitySelector";
 import ImageGrid from "./components/ImageGrid";
 import CityDescription from "./components/CityDescription";
-import db from '../public/dbCitta.json';
 import { getRegioni } from "./utils/helpers";
+import initialDb from '../public/dbCitta.json'; // Importiamo il DB iniziale (prima solo db)
+import CityProposer from './components/CityProposer'; // Il nuovo componente che creeremo
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#eee',
@@ -27,6 +28,7 @@ export default function App() {
   const [pagina, setPagina] = useState('attrazioni');
   const [attrazione, setAttrazione] = useState('');
   const [food, setFood] = useState('');
+  const [db, setDb] = useState(initialDb); // TRASFORMIAMO IL DB IN UNO STATO
 
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
   const [theme, setTheme] = useState(
@@ -47,6 +49,9 @@ export default function App() {
         theme={theme} setTheme={setTheme} db={db}
       />
       <Box marginTop={1}>
+        {city === '' && (
+           <CityProposer db={db} setDb={setDb} setCity={setCity} />
+        )}
         <Grid container spacing={1} direction="row-reverse">
           <Grid item sm={3}>            
             <Item>
