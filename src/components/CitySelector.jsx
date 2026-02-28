@@ -59,13 +59,12 @@ export default function CitySelector({city, setCity, attrazione, setAttrazione, 
                   </FormControl>      
                 </Box>          
               </Grid>
-
               <Grid item sx={{ width: {xs:'100%', sm:'auto'}, marginTop:{xs:0, sm:-0.5}, marginLeft:{xs:0, sm:1}}}>
-                {city !== '' && !elenco_regioni.includes(city) && attrazione === '' ? (
+                {city !== '' && !elenco_regioni.includes(city) ? (
                   <Stack spacing={2} alignItems="center" marginTop={1}>
                     <ToggleButtonGroup size="medium" value={pagina} exclusive onChange={handlePageChange}>
-                      <ToggleButton value="attrazioni">Cosa Vedere</ToggleButton>
-                      <ToggleButton value="cibo">Cosa Mangiare</ToggleButton>
+                      <ToggleButton value="attrazioni" onClick={() => {setAttrazione(''); setFood('');}}>Cosa Vedere</ToggleButton>
+                      <ToggleButton value="cibo" onClick={() => {setAttrazione(''); setFood('');}}>Cosa Mangiare</ToggleButton>
                     </ToggleButtonGroup>
                   </Stack>
                 ):(

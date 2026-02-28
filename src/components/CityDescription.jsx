@@ -99,7 +99,7 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
           </a>
         </Box>
 
-        <a href={creaLinkGoogleMaps(Object.keys(db[city]["attrazioni"]), city)} target="_blank" rel="noreferrer">
+        <a href={creaLinkGoogleMaps(Object.keys(db[city]["attrazioni"]).sort(), city)} target="_blank" rel="noreferrer">
           <img
             src={`../${city}/home.jpg`}
             alt={city}

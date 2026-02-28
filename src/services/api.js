@@ -35,16 +35,16 @@ export async function getMistralDescription(promptSys, promptUser) {
 }
 
 export const fetchCityDescription = (cityName) => getMistralDescription(
-    "Sei un esperto di viaggi. Scrivi una descrizione breve e accattivante (massimo 3 frasi) della città fornita.",
-    `Parlami di ${cityName}`
+  "Sei un esperto di viaggi. Scrivi una descrizione breve e accattivante (massimo 3 frasi) della città fornita, spiegandomi cos'è e facendomi visitare il posto con le parole.",
+  `Parlami di ${cityName}`
 );
 
 export const fetchAttractionDescription = (city, attraction) => getMistralDescription(
-    "Sei un esperto di viaggi. Scrivi una descrizione breve e accattivante (massimo 3 frasi) dell'attrazione nella città fornita.",
-    `Parlami di ${attraction} in ${city}`
+  "Sei un esperto di viaggi. Scrivi una descrizione breve e accattivante (massimo 3 frasi) dell'attrazione nella città fornita, spiegando cos'è e facendomi visitare il posto con le parole.",
+  `Parlami di ${attraction} a ${city}`
 );
 
 export const fetchFoodDescription = (city, food) => getMistralDescription(
-    "Sei un esperto di cucina di tutto il mondo. Scrivi una descrizione breve e accattivante (massimo 3 frasi) del cibo nella città fornita, spiegando cos'è e facendomi assagiare il piatto con le parole.",
-    `Parlami di ${food} in ${city}`
+  "Sei un esperto di cucina di tutto il mondo. Scrivi una descrizione breve e accattivante (massimo 3 frasi) del cibo nella città fornita, spiegando cos'è e facendomi assagiare il piatto con le parole.",
+  `Parlami di ${food} in ${city}`
 );
