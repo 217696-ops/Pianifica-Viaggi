@@ -17,20 +17,20 @@
       "Piazzale Michelangelo": "",
       "Ponte Vecchio": ""
     },
-    "cibo": [
-      "Bistecca alla fiorentina",
-      "Ribollita",
-      "Pappa al pomodoro",
-      "Ravioli di ricotta e spinaci",
-      "Lampredotto",
-      "Crostini di fegato",
-      "Trippa alla fiorentina",
-      "Cantucci",
-      "Schiacciata alla fiorentina",
-      "Schiacciata",
-      "Panforte",
-      "Castagnaccio"
-    ]
+    "cibo": {
+      "Bistecca alla fiorentina": "",
+      "Ribollita": "",
+      "Pappa al pomodoro": "",
+      "Ravioli di ricotta e spinaci": "",
+      "Lampredotto": "",
+      "Crostini di fegato": "",
+      "Trippa alla fiorentina": "",
+      "Cantucci": "",
+      "Schiacciata alla fiorentina": "",
+      "Schiacciata": "",
+      "Panforte": "",
+      "Castagnaccio": ""
+    }
   },
   "Napoli": {
     "regione": "Italia",
@@ -50,21 +50,21 @@
       "Teatro San Carlo": "",
       "Via San Gregorio Armeno": ""
     },
-    "cibo": [
-      "Pizza Napoletana",
-      "Sfogliatelle",
-      "Pastiera Napoletana",
-      "Babà al Rum",
-      "Zeppole di San Giuseppe",
-      "Cuoppo di Mare",
-      "Parmigiana di Melanzane",
-      "Taralli Napoletani",
-      "Pasta alla Genovese",
-      "Ragù Napoletano",
-      "Pasta Patate e Provola",
-      "Frittata di Maccheroni",
-      "Casatiello"
-    ]
+    "cibo": {
+      "Pizza Napoletana": "",
+      "Sfogliatelle": "",
+      "Pastiera Napoletana": "",
+      "Babà al Rum": "",
+      "Zeppole di San Giuseppe": "",
+      "Cuoppo di Mare": "",
+      "Parmigiana di Melanzane": "",
+      "Taralli Napoletani": "",
+      "Pasta alla Genovese": "",
+      "Ragù Napoletano": "",
+      "Pasta Patate e Provola": "",
+      "Frittata di Maccheroni": "",
+      "Casatiello": ""
+    }
   },
   "Parma": {
     "regione": "Italia",
@@ -84,19 +84,19 @@
       "Santuario di San Francesco del Prato": "",
       "Teatro Regio": ""
     },
-    "cibo": [
-      "Prosciutto di Parma",
-      "Parmigiano Reggiano",
-      "Torta fritta",
-      "Tortelli di Erbetta",
-      "Anolini in Brodo",
-      "Torta di Riso",
-      "Culatello di Zibello",
-      "Torta di Zucca",
-      "Coppa di Parma",
-      "Rosa di Parma",
-      "Tagliolini al Culatello"
-    ]
+    "cibo": {
+      "Prosciutto di Parma": "",
+      "Parmigiano Reggiano": "",
+      "Torta fritta": "",
+      "Tortelli di Erbetta": "",
+      "Anolini in Brodo": "",
+      "Torta di Riso": "",
+      "Culatello di Zibello": "",
+      "Torta di Zucca": "",
+      "Coppa di Parma": "",
+      "Rosa di Parma": "",
+      "Tagliolini al Culatello": ""
+    }
   },
   "Roma": {
     "regione": "Italia",
@@ -116,19 +116,19 @@
       "Piazza San Pietro": "",
       "Piazza Venezia": ""
     },
-    "cibo": [
-      "Spaghetti alla Carbonara",
-      "Cacio e Pepe",
-      "Saltimbocca alla Romana",
-      "Carciofi alla Romana",
-      "Supplì",
-      "Abbacchio alla Romana",
-      "Gricia",
-      "Trippa alla Romana",
-      "Porchetta",
-      "Bucatini all'Amatriciana",
-      "Maritozzo"
-    ]
+    "cibo": {
+      "Spaghetti alla Carbonara": "",
+      "Cacio e Pepe": "",
+      "Saltimbocca alla Romana": "",
+      "Carciofi alla Romana": "",
+      "Supplì": "",
+      "Abbacchio alla Romana": "",
+      "Gricia": "",
+      "Trippa alla Romana": "",
+      "Porchetta": "",
+      "Bucatini all'Amatriciana": "",
+      "Maritozzo": ""
+    }
   },
   "Venezia": {
     "regione": "Italia",
@@ -148,19 +148,19 @@
       "Scuola Grande di San Rocco": "",
       "Teatro La Fenice": ""
     },
-    "cibo": [
-      "Risotto al Nero di Seppia",
-      "Baccalà Mantecato",
-      "Fegato alla Veneziana",
-      "Sarde in Saor",
-      "Risotto al Pesce",
-      "Bigoli in Salsa",
-      "Risi e Bisi",
-      "Mołéche",
-      "Baicoli",
-      "Tiramisù",
-      "Fritto Misto alla Veneziana"
-    ]
+    "cibo": {
+      "Risotto al Nero di Seppia": "",
+      "Baccalà Mantecato": "",
+      "Fegato alla Veneziana": "",
+      "Sarde in Saor": "",
+      "Risotto al Pesce": "",
+      "Bigoli in Salsa": "",
+      "Risi e Bisi": "",
+      "Mołéche": "",
+      "Baicoli": "",
+      "Tiramisù": "",
+      "Fritto Misto alla Veneziana": ""
+    }
   },
   "Modena": {
     "regione": "Italia",
@@ -180,21 +180,20 @@
       "Museo Ferrari Maranello": "",
       "Palazzo Comunale": ""
     },
-    "cibo": [
-      "Tortellini in brodo",
-      "Gnocco fritto",
-      "Cotechino",
-      "Zampone",
-      "Tigelle",
-      "Parmigiano Reggiano",
-      "Aceto balsamico di Modena",
-      "Borlengo",
-      "Torta Barozzi",
-      "Bensone",
-      "Tortelloni",
-      "Rosette",
-      "Passatelli in Brodo"
-    ]
+    "cibo": {
+      "Tortellini in brodo": "",
+      "Gnocco fritto": "",
+      "Cotechino": "",
+      "Zampone": "",
+      "Tigelle": "",
+      "Parmigiano Reggiano": "",
+      "Aceto balsamico di Modena": "",
+      "Borlengo": "",
+      "Torta Barozzi": "",
+      "Bensone": "",
+      "Tortelloni": "",
+      "Rosette": ""
+    }
   },
   "Bologna": {
     "regione": "Italia",
@@ -215,15 +214,15 @@
       "Museo Morandi": "",
       "Giardini Margherita": ""
     },
-    "cibo": [
-      "Tagliatelle al ragù",
-      "Lasagne alla bolognese",
-      "Mortadella di Bologna",
-      "Cotoletta alla bolognese",
-      "Zuppa imperiale",
-      "Certosino di Bologna",
-      "Torta di Riso"
-    ]
+    "cibo": {
+      "Tagliatelle al ragù": "",
+      "Lasagne alla bolognese": "",
+      "Mortadella di Bologna": "",
+      "Cotoletta alla bolognese": "",
+      "Zuppa imperiale": "",
+      "Certosino di Bologna": "",
+      "Torta di Riso": ""
+    }
   },
   "Torino": {
     "regione": "Italia",
@@ -243,21 +242,21 @@
       "GAM - Galleria Civica d'Arte Moderna e Contemporanea": "",
       "Lingotto": ""
     },
-    "cibo": [
-      "Bagna cauda",
-      "Vitello tonnato",
-      "Agnolotti",
-      "Tajarin",
-      "Fritto misto alla piemontese",
-      "Grissini",
-      "Torroni",
-      "Gianduiotti",
-      "Bicerin",
-      "Bonet",
-      "Plin",
-      "Torta di nocciole",
-      "Panna cotta"
-    ]
+    "cibo": {
+      "Bagna cauda": "",
+      "Vitello tonnato": "",
+      "Agnolotti": "",
+      "Tajarin": "",
+      "Fritto misto alla piemontese": "",
+      "Grissini": "",
+      "Torroni": "",
+      "Gianduiotti": "",
+      "Bicerin": "",
+      "Bonet": "",
+      "Plin": "",
+      "Torta di nocciole": "",
+      "Panna cotta": ""
+    }
   },
   "Bugliano": {
     "regione": "Italia",
@@ -272,11 +271,11 @@
       "Ristorante Il Papero Offeso": "",
       "Accademia della Nutria": ""
     },
-    "cibo": [
-      "Nutria al Cioccolato",
-      "Braciola d'Orso",
-      "Grigliata di Nutria"
-    ]
+    "cibo": {
+      "Nutria al Cioccolato": "",
+      "Braciola d'Orso": "",
+      "Grigliata di Nutria": ""
+    }
   },
   "Tokyo": {
     "regione": "Asia",
@@ -304,20 +303,20 @@
       "Santuario Kanda Myojin": "",
       "Tempio Jindai-ji": ""
     },
-    "cibo": [
-      "Sushi",
-      "Sashimi",
-      "Tempura",
-      "Ramen",
-      "Yakitori",
-      "Okonomiyaki",
-      "Takoyaki",
-      "Udon",
-      "Tonkatsu",
-      "Unagi",
-      "Sukiyaki",
-      "Taiyaki"
-    ]
+    "cibo": {
+      "Sushi": "",
+      "Sashimi": "",
+      "Tempura": "",
+      "Ramen": "",
+      "Yakitori": "",
+      "Okonomiyaki": "",
+      "Takoyaki": "",
+      "Udon": "",
+      "Tonkatsu": "",
+      "Unagi": "",
+      "Sukiyaki": "",
+      "Taiyaki": ""
+    }
   },
   "Kyoto": {
     "regione": "Asia",
@@ -333,18 +332,18 @@
       "Tetsugaku No Michi": "",
       "Sanjusangen-do": ""
     },
-    "cibo": [
-      "Kaiseki Ryori",
-      "Yudofu",
-      "Obanzai",
-      "Saba-zushi",
-      "Yatsuhashi",
-      "Kamonanban",
-      "Somen",
-      "Kyoto Ramen",
-      "Yuba",
-      "Matcha Parfait"
-    ]
+    "cibo": {
+      "Kaiseki Ryori": "",
+      "Yudofu": "",
+      "Obanzai": "",
+      "Saba-zushi": "",
+      "Yatsuhashi": "",
+      "Kamonanban": "",
+      "Somen": "",
+      "Kyoto Ramen": "",
+      "Yuba": "",
+      "Matcha Parfait": ""
+    }
   },
   "Osaka": {
     "regione": "Asia",
@@ -359,20 +358,20 @@
       "Tempozan Ferris Wheel": "",
       "Osaka Science Museum": ""
     },
-    "cibo": [
-      "Takoyaki",
-      "Okonomiyaki",
-      "Kushikatsu",
-      "Horumon-yaki",
-      "Negiyaki",
-      "Kitsune Udon",
-      "Fugu",
-      "Butaman",
-      "Katsu Curry",
-      "Tecchiri",
-      "Yakiniku",
-      "Kori-gashi"
-    ]
+    "cibo": {
+      "Takoyaki": "",
+      "Okonomiyaki": "",
+      "Kushikatsu": "",
+      "Horumon-yaki": "",
+      "Negiyaki": "",
+      "Kitsune Udon": "",
+      "Fugu": "",
+      "Butaman": "",
+      "Katsu Curry": "",
+      "Tecchiri": "",
+      "Yakiniku": "",
+      "Kori-gashi": ""
+    }
   },
   "Bangkok": {
     "regione": "Asia",
@@ -392,19 +391,19 @@
       "Lumpini Park": "",
       "Terminal 21": ""
     },
-    "cibo": [
-      "Pad Thai",
-      "Tom Yum Goong (Zuppa di gamberi piccante e acida)",
-      "Som Tum (Insalata di papaya piccante)",
-      "Massaman Curry",
-      "Gaeng Keow Wan (Curry verde)",
-      "Khao Pad (Riso fritto)",
-      "Mango Sticky Rice",
-      "Tom Kha Gai (Zuppa di cocco e pollo)",
-      "Pad Krapow Moo Saap (Maiale al basilico)",
-      "Kai Med Ma Muang (Pollo con anacardi)",
-      "Khanom Buang (Crepes thailandesi)"
-    ]
+    "cibo": {
+      "Pad Thai": "",
+      "Tom Yum Goong (Zuppa di gamberi piccante e acida)": "",
+      "Som Tum (Insalata di papaya piccante)": "",
+      "Massaman Curry": "",
+      "Gaeng Keow Wan (Curry verde)": "",
+      "Khao Pad (Riso fritto)": "",
+      "Mango Sticky Rice": "",
+      "Tom Kha Gai (Zuppa di cocco e pollo)": "",
+      "Pad Krapow Moo Saap (Maiale al basilico)": "",
+      "Kai Med Ma Muang (Pollo con anacardi)": "",
+      "Khanom Buang (Crepes thailandesi)": ""
+    }
   },
   "Londra": {
     "regione": "Europa",
@@ -424,18 +423,18 @@
       "Hyde Park": "",
       "Camden Market": ""
     },
-    "cibo": [
-      "Fish and Chips",
-      "Pie and Mash",
-      "Full English Breakfast",
-      "Roast Beef and Yorkshire Pudding",
-      "Chicken Tikka Masala",
-      "Afternoon Tea",
-      "Bangers and Mash",
-      "Shepherd's Pie",
-      "Eton Mess",
-      "Crumpets"
-    ]
+    "cibo": {
+      "Fish and Chips": "",
+      "Pie and Mash": "",
+      "Full English Breakfast": "",
+      "Roast Beef and Yorkshire Pudding": "",
+      "Chicken Tikka Masala": "",
+      "Afternoon Tea": "",
+      "Bangers and Mash": "",
+      "Shepherd's Pie": "",
+      "Eton Mess": "",
+      "Crumpets": ""
+    }
   },
   "Barcellona": {
     "regione": "Europa",
@@ -455,20 +454,20 @@
       "Mercato della Boqueria": "",
       "Port Vell": ""
     },
-    "cibo": [
-      "Paella",
-      "Tapas",
-      "Pan con tomate",
-      "Crema Catalana",
-      "Calçots",
-      "Esqueixada",
-      "Butifarra",
-      "Escalivada",
-      "Cava",
-      "Fideuà",
-      "Bocadillo de jamón",
-      "Xurros amb xocolata"
-    ]
+    "cibo": {
+      "Paella": "",
+      "Tapas": "",
+      "Pan con tomate": "",
+      "Crema Catalana": "",
+      "Calçots": "",
+      "Esqueixada": "",
+      "Butifarra": "",
+      "Escalivada": "",
+      "Cava": "",
+      "Fideuà": "",
+      "Bocadillo de jamón": "",
+      "Xurros amb xocolata": ""
+    }
   },
   "Parigi": {
     "regione": "Europa",
@@ -488,20 +487,20 @@
       "Centro Pompidou": "",
       "Jardin du Luxembourg": ""
     },
-    "cibo": [
-      "Baguette",
-      "Croissant",
-      "Escargot",
-      "Coq au vin",
-      "Boeuf Bourguignon",
-      "Ratatouille",
-      "Quiche Lorraine",
-      "Soupe à l'oignon",
-      "Macarons",
-      "Crêpes",
-      "Éclair",
-      "Tarte Tatin"
-    ]
+    "cibo": {
+      "Baguette": "",
+      "Croissant": "",
+      "Escargot": "",
+      "Coq au vin": "",
+      "Boeuf Bourguignon": "",
+      "Ratatouille": "",
+      "Quiche Lorraine": "",
+      "Soupe à l'oignon": "",
+      "Macarons": "",
+      "Crêpes": "",
+      "Éclair": "",
+      "Tarte Tatin": ""
+    }
   }
   
 }
