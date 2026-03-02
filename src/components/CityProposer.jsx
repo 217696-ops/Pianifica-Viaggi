@@ -3,6 +3,13 @@ import { useState } from 'react';
 import { Box, TextField, Button, CircularProgress, Typography, Paper } from '@mui/material';
 import { generateCityJSON } from '../services/api';
 
+// CONTROLLO CON API DEL METEO 102
+// CONTROLLO CON API DEL METEO 102
+// CONTROLLO CON API DEL METEO 102
+// CONTROLLO CON API DEL METEO 102
+// CONTROLLO CON API DEL METEO 102
+// CONTROLLO CON API DEL METEO 102
+
 export default function CityProposer({ db, setDb, setCity }) {
   const [newCityName, setNewCityName] = useState('');
   const [isLoading, setIsLoading] = useState(false);

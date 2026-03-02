@@ -25,6 +25,64 @@ export const creaLinkGoogleMaps = (attrazioni, citta) => {
   return link;
 };
 
+export const getDefaultImage = (tipo, regione) => {
+  const imageMap = {
+    citta: {
+      Italia: '../_cityImage/cityImageItalia.jpg',
+      Europa: '../_cityImage/cityImageEuropa.jpg',
+      Asia: '../_cityImage/cityImageItalia.jpg',
+      America: '../_cityImage/cityImage.jpg',
+      Africa: '../_cityImage/cityImage.jpg',
+      Oceania: '../_cityImage/cityImage.jpg',
+      default: '../_cityImage/cityImage.jpg'
+    },
+    attrazione: {
+      Oceania: '../_attractionImage/1.jpg',
+      default: [
+        '../_attractionImage/1.jpg',
+        '../_attractionImage/2.jpg',
+        '../_attractionImage/3.jpg',
+        '../_attractionImage/4.jpg',
+        '../_attractionImage/5.jpg',
+        '../_attractionImage/6.jpg',
+        '../_attractionImage/7.jpg',
+        '../_attractionImage/8.jpg'
+        ]
+    },
+    cibo: {
+      Oceania: '../_cityImage/foodImage.jpg',
+      Asia: [
+        '../_foodImage/Asia1.jpg',
+        '../_foodImage/Asia2.jpg',
+        '../_foodImage/Asia3.jpg',
+        '../_foodImage/Asia4.jpg',
+        '../_foodImage/Asia5.jpg',
+        '../_foodImage/Asia6.jpg'
+      ],
+      default: '../_foodImage/foodImage.jpg'
+    },
+    // Fallback globale se il "tipo" non esiste proprio
+    default: '../default.jpg'
+  };
+
+  // 1. Seleziona la categoria (es. 'citta'), se non esiste usa il fallback globale
+  const categoria = imageMap[tipo] || imageMap.default;
+
+  // Se la categoria è proprio l'immagine di default (stringa), la restituiamo subito
+  if (typeof categoria === 'string') return categoria;
+
+  // Recuperiamo il valore associato alla regione
+  const risultato = categoria[regione] || categoria.default || imageMap.default;
+
+  // LOGICA CASUALE: Se il risultato è un Array, pesca un indice a caso
+  if (Array.isArray(risultato)) {
+    const randomIndex = Math.floor(Math.random() * risultato.length);
+    return risultato[randomIndex];
+  }
+
+  return risultato;
+};
+
 export const Citazioni = [
     {
       citazione:"Non è il freddo, è l'umidità che ti ammazza: LE VELINEEE!!!",

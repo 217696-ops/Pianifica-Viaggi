@@ -68,7 +68,7 @@ Usa esattamente questa struttura:
     "Piatto tipico 3": ""
   }
 }
-Inserisci almeno 8-10 attrazioni e 6-8 piatti tipici. Per i valori delle attrazioni metti la stringa "Descrizione" (così ci penserà l'altro modulo a generarla), per i valori del cibo metti una stringa vuota "".`;
+Inserisci almeno 8-10 attrazioni e 6-8 piatti tipici. Per i valori delle attrazioni metti la stringa "Descrizione" (così ci penserà l'altro modulo a generarla), per i valori della descrizione della città, delle attraziona e del cibo metti una stringa vuota "".`;
 
   try {
     const response = await getMistralDescription(promptSys, `Genera il JSON per la città: ${cityName}`);

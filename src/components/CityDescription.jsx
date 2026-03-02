@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Box, Typography, InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import Meteo from "./Meteo"; // Assumendo che esista già e non lo tocchiamo
-import { creaLinkGoogleMaps, getRandomCitazione } from "../utils/helpers";
+import { creaLinkGoogleMaps, getRandomCitazione, getDefaultImage } from "../utils/helpers";
 import { fetchCityDescription, fetchAttractionDescription, fetchFoodDescription, getUnsplashImage } from "../services/api";
 
 export default function CityDescription({ city, pagina, attrazione, food, setPagina, db }) {
@@ -53,7 +53,7 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
               style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '16em', borderRadius: '10px' }} 
               onError={async (e) => {
                 e.target.onerror = null;
-                e.target.src = await getUnsplashImage(attrazione, '../attractionImage.jpg');
+                e.target.src = await getUnsplashImage(attrazione, getDefaultImage("attrazione", db[city]["regione"]));
               }}
           />
         </a>
@@ -76,7 +76,7 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
               style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '16em', borderRadius: '10px' }} 
               onError={async (e) => {
                 e.target.onerror = null;
-                e.target.src = await getUnsplashImage(food, '../foodImage.jpg');
+                e.target.src = await getUnsplashImage(food, getDefaultImage("food", db[city]["regione"]));
               }}
           />
         </a>
@@ -106,7 +106,7 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
             style={{ objectFit: "cover", objectPosition: "center", width: "100%", height: "20em", borderRadius: "10px", marginTop: "0.5em" }}
             onError={async (e) => {
               e.target.onerror = null;
-              e.target.src = await getUnsplashImage(city, '../cityImage.jpg');
+              e.target.src = await getUnsplashImage(city, getDefaultImage("citta", db[city]["regione"]));
             }}
           />
         </a>
