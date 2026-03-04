@@ -2,9 +2,64 @@ import * as React from "react";
 import { useState, useEffect } from 'react';
 import { Box, Typography, InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 import RestaurantIcon from '@mui/icons-material/Restaurant';
-import Meteo from "./Meteo"; // Assumendo che esista già e non lo tocchiamo
+import Meteo from "./Meteo"; 
 import { creaLinkGoogleMaps, getRandomCitazione, getDefaultImage } from "../utils/helpers";
 import { fetchCityDescription, fetchAttractionDescription, fetchFoodDescription, getUnsplashImage } from "../services/api";
+
+// --- COMPONENTE SMART IMAGE (Logica Blur + Badge) ---
+const SmartImage = ({ initialSrc, title, fallbackQuery, fallbackDefault, height, minHeight, marginTop }) => {
+  const [src, setSrc] = useState(initialSrc);
+  const [showBadge, setShowBadge] = useState(false);
+
+  useEffect(() => {
+    setSrc(initialSrc);
+    setShowBadge(false);
+  }, [initialSrc, fallbackQuery]);
+
+  const handleError = async () => {
+    // Se siamo già in errore o Unsplash ha già fallito, non riprovare
+    if (showBadge) return;
+
+    try {
+      const unsplashUrl = await getUnsplashImage(fallbackQuery, fallbackDefault);
+
+      // Verifichiamo se Unsplash ha restituito il fallback locale
+      if (unsplashUrl === fallbackDefault) {
+        setShowBadge(true);
+      }
+      setSrc(unsplashUrl);
+    } catch (err) {
+      console.error("Errore nel recupero immagine:", err);
+      setSrc(fallbackDefault);
+      setShowBadge(true);
+    }
+  };
+
+  return (
+    <Box sx={{ position: 'relative', width: '100%', height, borderRadius: '10px', overflow: 'hidden', mt: 0.5 }}>
+      <img 
+        key={src}
+        src={src} 
+        alt={title} 
+        onError={handleError}
+        style={{ 
+          objectFit: 'cover', objectPosition: 'center', width: '100%', height, minHeight, borderRadius: "10px", marginTop, 
+          filter: showBadge ? 'blur(5px) brightness(0.7)' : 'none',
+          transition: 'filter 0.3s ease'
+        }} 
+      />
+      {showBadge && (
+        <Typography sx={{
+          position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+          color: 'white', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '2em',
+          textShadow: '2px 2px 8px rgba(0,0,0,0.8)', textAlign: 'center', width: '90%', pointerEvents: 'none'
+        }}>
+          Immagine non trovata
+        </Typography>
+      )}
+    </Box>
+  );
+};
 
 export default function CityDescription({ city, pagina, attrazione, food, setPagina, db }) {
   const [aiCityDesc, setAiCityDesc] = useState("");
@@ -47,14 +102,12 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
     return (
       <Box>
         <a style={{ textDecoration: 'none', color: 'inherit' }} href={`https://www.google.com/maps/search/?api=1&query=${attrazione}+${city}`} target="_blank" rel="noreferrer">
-          <img 
-              src={`../${city}/${attrazione}.jpg`}
-              alt={attrazione}
-              style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '16em', borderRadius: '10px' }} 
-              onError={async (e) => {
-                e.target.onerror = null;
-                e.target.src = await getUnsplashImage(attrazione, getDefaultImage("attrazione", db[city]["regione"]));
-              }}
+          <SmartImage 
+            initialSrc={`../${city}/${attrazione}.jpg`}
+            title={attrazione}
+            fallbackQuery={attrazione}
+            fallbackDefault={getDefaultImage("attrazione", db[city]["regione"])}
+            height='20em'
           />
         </a>
         <Typography style={{ textAlign: "left", marginTop: '1em' }}>{descText}</Typography>
@@ -70,14 +123,12 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
     return (
       <Box>
         <a style={{ textDecoration: 'none', color: 'inherit' }} href={`https://www.google.com/maps/search/?api=1&query=${food}+${city}`} target="_blank" rel="noreferrer">
-          <img 
-              src={`../${city}/${food}.jpg`}
-              alt={food}
-              style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '16em', borderRadius: '10px' }} 
-              onError={async (e) => {
-                e.target.onerror = null;
-                e.target.src = await getUnsplashImage(food, getDefaultImage("food", db[city]["regione"]));
-              }}
+          <SmartImage 
+            initialSrc={`../${city}/${food}.jpg`}
+            title={food}
+            fallbackQuery={food}
+            fallbackDefault={getDefaultImage("cibo", db[city]["regione"])}
+            height='20em'
           />
         </a>
         <Typography style={{ textAlign: "left", marginTop: '1em' }}>{descText}</Typography>
@@ -89,7 +140,6 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
   if (city) {
     const descText = (db[city]["descrizione"] === "Descrizione" || !db[city]["descrizione"]) 
       ? aiCityDesc : db[city]["descrizione"];
-
     return (
       <Box>
         <Box style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -98,21 +148,17 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
             <RestaurantIcon fontSize="medium"/>
           </a>
         </Box>
-
         <a href={creaLinkGoogleMaps(Object.keys(db[city]["attrazioni"]).sort(), city)} target="_blank" rel="noreferrer">
-          <img
-            src={`../${city}/home.jpg`}
-            alt={city}
-            style={{ objectFit: "cover", objectPosition: "center", width: "100%", height: "20em", borderRadius: "10px", marginTop: "0.5em" }}
-            onError={async (e) => {
-              e.target.onerror = null;
-              e.target.src = await getUnsplashImage(city, getDefaultImage("citta", db[city]["regione"]));
-            }}
+          <SmartImage 
+            initialSrc={`../${city}/home.jpg`} 
+            title={city}
+            fallbackQuery={city}
+            fallbackDefault={getDefaultImage("citta", db[city]["regione"])}
+            height="20em"
+            marginTop="0.5em"
           />
         </a>
-
         <Typography style={{ textAlign: "left", marginTop: '1em' }}>{descText}</Typography>
-
         <Box marginBottom={1} marginTop={2} sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
             <InputLabel id="select-meteo-label">Meteo</InputLabel>
@@ -133,14 +179,11 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
   // 4. Vista Home (Niente selezionato o Regione selezionata)
   return (
     <Box style={{ width: "100%" }}>
-      <img
-        src={"../default.jpg"}
-        alt="Home"
-        style={{ objectFit: "cover", objectPosition: "center", width: "100%", minHeight: "18em", borderRadius: "10px", marginTop: "0.5em" }}
-      />
-      <Typography style={{ textAlign: "left", width: "100%", marginTop: '1em' }}>
+      <SmartImage initialSrc="../default.jpg" title="Home" height="20em" marginTop="0.5em"/>
+      <Typography style={{ textAlign: "left", width: "100%", marginTop: '1em',  whiteSpace:"pre-line"}}>
         "{randomQuote.citazione}"<br/> <i>{randomQuote.autore}</i>
       </Typography>
     </Box>
   );
+  
 }

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react'; 
 import { createTheme } from "@mui/material/styles";
 import { Box, InputLabel, MenuItem, FormControl, Select, Stack, ToggleButton, ToggleButtonGroup, Grid, AppBar, Toolbar, IconButton } from '@mui/material';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
@@ -8,6 +8,12 @@ import { getRegioni } from '../utils/helpers';
 
 export default function CitySelector({city, setCity, attrazione, setAttrazione, food, setFood, pagina, setPagina, theme, setTheme, db}) {
   const elenco_regioni = getRegioni(db);
+
+  useEffect(() => {
+    if (city == '' ) {
+      setPagina('attrazioni');
+    }
+  }, [city, elenco_regioni, setPagina]); 
 
   const handleCityChange = (event) => {
     setCity(event.target.value);
@@ -67,9 +73,7 @@ export default function CitySelector({city, setCity, attrazione, setAttrazione, 
                       <ToggleButton value="cibo" onClick={() => {setAttrazione(''); setFood('');}}>Cosa Mangiare</ToggleButton>
                     </ToggleButtonGroup>
                   </Stack>
-                ):(
-                  <Box onChange={setPagina('attrazioni')}></Box>
-                )}
+                  ):null}
               </Grid>          
             </Grid>          
           </Grid>
