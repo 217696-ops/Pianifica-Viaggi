@@ -50,10 +50,16 @@ export default function App() {
       />
       <Box marginTop={1}>
         {city === '' && (
-           <CityProposer db={db} setDb={setDb} setCity={setCity} />
+          <Grid container marginBottom={1}>
+            <Grid item xs={12}>
+              <Item>
+                <CityProposer db={db} setDb={setDb} setCity={setCity} />
+              </Item>            
+            </Grid>         
+          </Grid>
         )}
         <Grid container spacing={1} direction="row-reverse">
-          <Grid item sm={3}>            
+          <Grid item sm={3} xs={12}>            
             <Item>
               <CityDescription 
                 city={isRegionSelected ? '' : city} 
@@ -63,8 +69,8 @@ export default function App() {
               />
             </Item>            
           </Grid>
-          <Grid item sm={9}>            
-            <Item style={{ border: 'none', padding: 0, background: 'none', height: '100%', boxShadow: 'none' }}>            
+          <Grid item sm={9} xs={12}>            
+            <Item style={{ border: 'none', padding: 0, background: 'none', height: '100%', width: "100%",boxShadow: 'none' }}>            
               <ImageGrid 
                 city={city} setCity={setCity} 
                 attrazione={attrazione} setAttrazione={setAttrazione} 

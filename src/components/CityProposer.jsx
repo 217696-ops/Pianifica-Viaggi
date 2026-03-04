@@ -2,13 +2,9 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Box, TextField, Button, CircularProgress, Typography, Paper } from '@mui/material';
 import { generateCityJSON } from '../services/api';
+import Meteo from "./Meteo"; 
 
-// CONTROLLO CON API DEL METEO 102
-// CONTROLLO CON API DEL METEO 102
-// CONTROLLO CON API DEL METEO 102
-// CONTROLLO CON API DEL METEO 102
-// CONTROLLO CON API DEL METEO 102
-// CONTROLLO CON API DEL METEO 102
+const token = "8cd95670411e3573574d297cfecc7537";
 
 export default function CityProposer({ db, setDb, setCity }) {
   const [newCityName, setNewCityName] = useState('');
@@ -33,31 +29,45 @@ export default function CityProposer({ db, setDb, setCity }) {
 
     const newCityData = await generateCityJSON(formattedCity);
 
-    if (newCityData) {
-      // Aggiorniamo il "database" in memoria
-      setDb(prevDb => {
-        const updatedDb = { ...prevDb, [formattedCity]: newCityData };
-        // (Opzionale) Stampa il JSON in console per te, sviluppatore, così puoi copiarlo!
-        console.log(`JSON GENERATO PER ${formattedCity}:`, JSON.stringify(newCityData, null, 2));
-        return updatedDb;
-      });
-
-      setMessage('Città creata con successo!');
-      setNewCityName('');
-      setCity(formattedCity); // Navighiamo subito alla nuova città!
-    } else {
-      setMessage('Ops! Qualcosa è andato storto nella generazione. Riprova.');
-    }
-
+      // Controlliamo se esiste il Meteo
+      try {
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?q=${formattedCity},${JSON.stringify(newCityData, null, 2)["nazione"]}&APPID=${token}`
+        );
+        const output = await response.json();
+        if(output["cod"] == 200) {
+          //console.log('Città creata con successo!', output["cod"]);
+          setDb(prevDb => {
+            const updatedDb = { ...prevDb, [formattedCity]: newCityData };
+            // (Opzionale) Stampa il JSON in console per te, sviluppatore, così puoi copiarlo!
+            console.log(`JSON GENERATO PER ${formattedCity}:`, JSON.stringify(newCityData, null, 2));
+            setCity(formattedCity); // Navighiamo subito alla nuova città!
+            return updatedDb;
+          });
+        } else {
+          setMessage('Mi dispiace, non ho trovato la città che mi hai chiesto');
+          setNewCityName('');
+          console.log('Questa città non esiste!', output["cod"]);
+          setIsLoading(false);
+          return;
+        }
+        
+      }catch (e) {
+        setMessage('Mi dispiace, non ho trovato la città che mi hai chiesto');
+        setNewCityName('');
+        console.log('Questa città non esiste!', output);
+        setIsLoading(false);
+        return;
+      }
     setIsLoading(false);
   };
 
   return (
-    <Paper sx={{ p: 2, mb: 2, textAlign: 'center', backgroundColor: 'background.paper' }}>
+    <Box style={{ width: "100%" }}>
       <Typography variant="h6" gutterBottom>
         Non trovi la tua città preferita? Aggiungila tu!
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 2, mt: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 2 }}>
         <TextField 
           label="Es. Parigi, Tokyo..." 
           variant="outlined" 
@@ -79,6 +89,6 @@ export default function CityProposer({ db, setDb, setCity }) {
           {message}
         </Typography>
       )}
-    </Paper>
+    </Box>
   );
 }

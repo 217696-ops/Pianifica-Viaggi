@@ -37,7 +37,36 @@ export const getDefaultImage = (tipo, regione) => {
       default: '../_cityImage/cityImage.jpg'
     },
     attrazione: {
-      Oceania: '../_attractionImage/1.jpg',
+      Italia: [
+        '../_attractionImage/Italia1.jpg',
+        '../_attractionImage/Italia2.jpg',
+        '../_attractionImage/Italia3.jpg',
+        '../_attractionImage/Italia4.jpg',
+        '../_attractionImage/Italia5.jpg',
+        '../_attractionImage/Italia6.jpg',
+        '../_attractionImage/Italia7.jpg',
+        '../_attractionImage/Italia8.jpg'
+        ],
+      Europa: [
+        '../_attractionImage/Europa1.jpg',
+        '../_attractionImage/Europa2.jpg',
+        '../_attractionImage/Europa3.jpg',
+        '../_attractionImage/Europa4.jpg',
+        '../_attractionImage/Europa5.jpg',
+        '../_attractionImage/Europa6.jpg',
+        '../_attractionImage/Europa7.jpg',
+        '../_attractionImage/Europa8.jpg'
+        ],
+      Asia: [
+        '../_attractionImage/Asia1.jpg',
+        '../_attractionImage/Asia2.jpg',
+        '../_attractionImage/Asia3.jpg',
+        '../_attractionImage/Asia4.jpg',
+        '../_attractionImage/Asia5.jpg',
+        '../_attractionImage/Asia6.jpg',
+        '../_attractionImage/Asia7.jpg',
+        '../_attractionImage/Asia8.jpg'
+        ],
       default: [
         '../_attractionImage/1.jpg',
         '../_attractionImage/2.jpg',
@@ -50,7 +79,22 @@ export const getDefaultImage = (tipo, regione) => {
         ]
     },
     cibo: {
-      Oceania: '../_cityImage/foodImage.jpg',
+      Italia: [
+        '../_foodImage/Italia1.jpg',
+        '../_foodImage/Italia2.jpg',
+        '../_foodImage/Italia3.jpg',
+        '../_foodImage/Italia4.jpg',
+        '../_foodImage/Italia5.jpg',
+        '../_foodImage/Italia6.jpg'
+      ],
+      Europa: [
+        '../_foodImage/Europa1.jpg',
+        '../_foodImage/Europa2.jpg',
+        '../_foodImage/Europa3.jpg',
+        '../_foodImage/Europa4.jpg',
+        '../_foodImage/Europa5.jpg',
+        '../_foodImage/Europa6.jpg'
+      ],
       Asia: [
         '../_foodImage/Asia1.jpg',
         '../_foodImage/Asia2.jpg',
@@ -58,6 +102,14 @@ export const getDefaultImage = (tipo, regione) => {
         '../_foodImage/Asia4.jpg',
         '../_foodImage/Asia5.jpg',
         '../_foodImage/Asia6.jpg'
+      ],
+      America: [
+        '../_foodImage/America1.jpg',
+        '../_foodImage/America2.jpg',
+        '../_foodImage/America3.jpg',
+        '../_foodImage/America4.jpg',
+        '../_foodImage/America5.jpg',
+        '../_foodImage/America6.jpg'
       ],
       default: '../_foodImage/foodImage.jpg'
     },
@@ -122,14 +174,15 @@ export const Citazioni = [
     },
     {
       citazione:`Se ni' mondo esistesse un po' di bene
-      e ognun si honsiderasse suo fratello
-      ci sarebbe meno pensieri e meno pene
+      e ognun si honsiderasse suo fratello 
+      ci sarebbe meno pensieri e meno pene 
       ne il mondo ne sarebbe assai più bello`,
       autore:"Pietro Pacciani"
     }
   ];
 
 export const getRandomCitazione = () => {
+  // const indice = Citazioni.length-1;
   const indice = Math.floor(Math.random() * Citazioni.length);
   return Citazioni[indice];
 };

@@ -1,21 +1,36 @@
 import { Mistral } from '@mistralai/mistralai';
 
 const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_API_KEY;
+const UNSPLASH_ACCESS_KEY_2 = import.meta.env.VITE_UNSPLASH_API_KEY_2;
+const UNSPLASH_ACCESS_KEY_3 = import.meta.env.VITE_UNSPLASH_API_KEY_3;
+const UNSPLASH_ACCESS_KEY_4 = import.meta.env.VITE_UNSPLASH_API_KEY_4;
+const UNSPLASH_KEYS = [
+  UNSPLASH_ACCESS_KEY,
+  UNSPLASH_ACCESS_KEY_2,
+  UNSPLASH_ACCESS_KEY_3,
+  UNSPLASH_ACCESS_KEY_4
+];
 const MISTRAL_TOKEN = import.meta.env.VITE_MISTRAL_TOKEN;
 
 const mistralClient = new Mistral({ apiKey: MISTRAL_TOKEN });
-
 export async function getUnsplashImage(query, defaultImage) {
-  try {
-    const response = await fetch(
-      `https://api.unsplash.com/search/photos?query=${query}&client_id=${UNSPLASH_ACCESS_KEY}`
-    );
-    const data = await response.json();
-    return data.results?.[0]?.urls?.regular || defaultImage;
-  } catch (e) {
-    console.error("Errore Unsplash:", e);
-    return defaultImage;
+  for(const key of UNSPLASH_KEYS) {
+    try {
+      const response = await fetch(
+        `https://api.unsplash.com/search/photos?query=${query}&client_id=${key}`
+      );
+      const data = await response.json();
+      //console.log(response);
+      if(!response.ok) {
+        console.warn(`Token non valido o limitato, provo il prossimo...`);
+        continue; 
+      }
+      return data.results?.[0]?.urls?.regular || defaultImage;
+    } catch (e) {
+      console.error(`Errore Unsplash ${key}:`, e);
+    }
   }
+  return defaultImage;
 }
 
 export async function getMistralDescription(promptSys, promptUser) {
@@ -68,7 +83,7 @@ Usa esattamente questa struttura:
     "Piatto tipico 3": ""
   }
 }
-Inserisci almeno 8-10 attrazioni e 6-8 piatti tipici. Per i valori delle attrazioni metti la stringa "Descrizione" (così ci penserà l'altro modulo a generarla), per i valori della descrizione della città, delle attraziona e del cibo metti una stringa vuota "".`;
+Inserisci almeno 8-10 attrazioni e 6-8 piatti tipici. Per i valori delle attrazioni metti la stringa "" (così ci penserà l'altro modulo a generarla), per i valori della descrizione della città, delle attraziona e del cibo metti una stringa vuota "".`;
 
   try {
     const response = await getMistralDescription(promptSys, `Genera il JSON per la città: ${cityName}`);
