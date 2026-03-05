@@ -17,7 +17,7 @@ import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 
-const token = "8cd95670411e3573574d297cfecc7537";
+const token = import.meta.env.VITE_WEATHER_TOKEN;
 const italyTimezone = 3600;
 
 const Item = styled(Paper)(({ theme }) => ({

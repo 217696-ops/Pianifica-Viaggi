@@ -4,7 +4,7 @@ import { Box, TextField, Button, CircularProgress, Typography, Paper } from '@mu
 import { generateCityJSON } from '../services/api';
 import Meteo from "./Meteo"; 
 
-const token = "8cd95670411e3573574d297cfecc7537";
+const token = import.meta.env.VITE_WEATHER_TOKEN;
 
 export default function CityProposer({ db, setDb, setCity }) {
   const [newCityName, setNewCityName] = useState('');
