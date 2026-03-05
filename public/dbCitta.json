@@ -284,24 +284,20 @@
     "attrazioni": {
       "Sensō-ji": "",
       "Santuario Meiji": "",
-      "Tokyo Tower": "",
       "Palazzo imperiale": "",
-      "Tokyo Skytree": "",
       "Parco di Ueno": "",
       "Shibuya Scramble Crossing": "",
       "Shinjuku Gyoen National Garden": "",
-      "Palazzo del governo": "",
       "Golden Gai": "",
-      "Akihabara Electric Town": "",
+      "Akihabara": "",
       "Museo Ghibli": "",
       "Mercato del Pesce di Tsukiji": "",
-      "Isola Articiciale di Odaiba": "",
-      "Tempio Zojo-ji": "",
-      "Templi Hongan-ji": "",
-      "Tempio Reiyukai": "",
-      "Santuario Yushima Tenjin": "",
-      "Santuario Kanda Myojin": "",
-      "Tempio Jindai-ji": ""
+      "Mercato di Ameyoko": "",
+      "Santuario Kanda": "",
+      "Asakusa Underground Street": "",
+      "Testa di Godzilla": "",
+      "Pokémon Center": "",
+      "Meiji Jingu Gyoen": ""
     },
     "cibo": {
       "Sushi": "",
@@ -323,14 +319,21 @@
     "nazione": "jp",
     "descrizione": "Kyoto, un tempo capitale del Giappone, Kyoto è una città dell'isola di Honshu. È famosa per i numerosi templi classici buddisti, per i giardini, i palazzi imperiali, i santuari shintoisti e le case di legno tradizionali. La città è nota anche per le sue tradizioni, per esempio la cena kaiseki, che consiste in molte portate preparate secondo regole precise, e le geishe, donne intrattenitrici che si trovano principalmente nel quartiere di Gion.",
     "attrazioni": {
-      "Kinkaku-ji": "",
+      "Byodo-in ": "",
       "Fushimi Inari-taisha": "",
+      "Sanjusangen-do": "",
       "Kiyomizu-dera": "",
-      "Arashiyama": "",
+      "Hokan-ji": "",
+      "Santuario Yasaka": "",
+      "Nanzen-ji": "",
+      "Santuario Heian": "",
+      "Ginkaku-ji": "",
       "Castello di Nijo": "",
+      "Kinkaku-ji": "",
+      "Ryoan-ji": "",
       "Gion": "",
-      "Tetsugaku No Michi": "",
-      "Sanjusangen-do": ""
+      "Otagi Nenbutsu-ji": "",
+      "Tetsugaku No Michi": ""
     },
     "cibo": {
       "Kaiseki Ryori": "",
@@ -352,11 +355,10 @@
     "attrazioni": {
       "Castello di Osaka": "",
       "Dotonbori": "",
+      "Shitenno-ji": "",
+      "Tsutenkaku": "",
       "Universal Studios Japan": "",
-      "Acquario di Osaka (Kaiyukan)": "",
-      "Umeda Sky Building": "",
-      "Tempozan Ferris Wheel": "",
-      "Osaka Science Museum": ""
+      "Umeda Sky Building": ""
     },
     "cibo": {
       "Takoyaki": "",
@@ -371,38 +373,6 @@
       "Tecchiri": "",
       "Yakiniku": "",
       "Kori-gashi": ""
-    }
-  },
-  "Bangkok": {
-    "regione": "Asia",
-    "nazione": "th",
-    "descrizione": "Bangkok, la capitale della Thailandia, è una città vivace e affascinante, ricca di cultura, storia e vibrante vita urbana. Conosciuta per i suoi templi dorati, i mercati galleggianti, la deliziosa cucina e la frenetica vita notturna, Bangkok è una destinazione che affascina i visitatori di tutto il mondo.",
-    "attrazioni": {
-      "Wat Phra Kaew (Tempio del Buddha di Smeraldo)": "",
-      "Wat Arun (Tempio Alba)": "",
-      "Wat Pho (Tempio del Buddha sdraiato)": "",
-      "Gran Palazzo Reale": "",
-      "Mercati galleggianti di Damnoen Saduak e Amphawa": "",
-      "Chao Phraya River e i suoi canali": "",
-      "Chatuchak Weekend Market": "",
-      "Khao San Road": "",
-      "MBK Center": "",
-      "Jim Thompson House": "",
-      "Lumpini Park": "",
-      "Terminal 21": ""
-    },
-    "cibo": {
-      "Pad Thai": "",
-      "Tom Yum Goong (Zuppa di gamberi piccante e acida)": "",
-      "Som Tum (Insalata di papaya piccante)": "",
-      "Massaman Curry": "",
-      "Gaeng Keow Wan (Curry verde)": "",
-      "Khao Pad (Riso fritto)": "",
-      "Mango Sticky Rice": "",
-      "Tom Kha Gai (Zuppa di cocco e pollo)": "",
-      "Pad Krapow Moo Saap (Maiale al basilico)": "",
-      "Kai Med Ma Muang (Pollo con anacardi)": "",
-      "Khanom Buang (Crepes thailandesi)": ""
     }
   },
   "Londra": {
