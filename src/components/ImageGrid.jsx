@@ -14,21 +14,35 @@ const Item = styled(Paper)(({ theme }) => ({
   overflow: 'hidden'
 }));
 
-// Sotto-componente per gestire la logica asincrona e il badge
 const SmartCardImage = ({ initialSrc, title, fallbackQuery, fallbackDefault }) => {
   const [src, setSrc] = useState(initialSrc);
-  const [showBadge, setShowBadge] = useState(false);
+  const [status, setStatus] = useState('original'); // 'original', 'unsplash', 'error'
 
   const handleError = async () => {
-    if (showBadge) return;
+    // Evitiamo loop se siamo già in stato di errore o abbiamo già caricato Unsplash
+    if (status !== 'original') return;
 
-    const unsplashUrl = await getUnsplashImage(fallbackQuery, fallbackDefault);
+    try {
+      const unsplashUrl = await getUnsplashImage(fallbackQuery, fallbackDefault);
 
-    if (unsplashUrl === fallbackDefault) {
-      setShowBadge(true);
+      if (unsplashUrl === fallbackDefault) {
+        setStatus('error');
+        setSrc(fallbackDefault);
+      } else {
+        setStatus('unsplash');
+        setSrc(unsplashUrl);
+      }
+    } catch (err) {
+      setStatus('error');
+      setSrc(fallbackDefault);
     }
+  };
 
-    setSrc(unsplashUrl);
+  // Calcolo dinamico dello stile dell'immagine
+  const getFilterStyle = () => {
+    if (status === 'unsplash') return 'blur(0px) brightness(1.0)'; // Leggero per Unsplash
+    if (status === 'error') return 'blur(3px) brightness(0.7)';    // Forte per Errore
+    return 'none';
   };
 
   return (
@@ -36,36 +50,38 @@ const SmartCardImage = ({ initialSrc, title, fallbackQuery, fallbackDefault }) =
       <img 
         src={src}
         alt={title}
+        onError={handleError}
         style={{ 
           objectFit: 'cover', 
           objectPosition: 'center', 
           width: '100%', 
           height: '100%',
-          // SFOCATURA: si attiva solo se mostriamo il badge
-          filter: showBadge ? 'blur(4px) brightness(0.7)' : 'none',
-          transition: 'filter 0.3s ease' // Rende l'effetto più fluido
+          filter: getFilterStyle(),
+          transition: 'filter 0.4s ease'
         }} 
-        onError={handleError}
       />
 
-      {showBadge && (
+      {status !== 'original' && (
         <Box sx={{
           position: 'absolute',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          // BADGE PULITO: senza bordi, solo testo bianco con ombra per leggibilità
           color: 'white',
           textAlign: 'center',
           textTransform: 'uppercase',
-          fontSize: '0.9rem',
           fontWeight: 'bold',
           letterSpacing: '1px',
-          textShadow: '2px 2px 8px rgba(0,0,0,0.8)', // Ombra per leggere il testo sul blur
           pointerEvents: 'none',
-          width: '80%'
+          width: '80%',
+          // --- LOGICA TESTO DIFFERENZIATA ---
+          opacity: status === 'unsplash' ? 0.7 : 1,
+          fontSize: status === 'unsplash' ? '0.75rem' : '0.9rem',
+          textShadow: status === 'unsplash' 
+            ? '1px 1px 4px rgba(0,0,0,0.6)' 
+            : '2px 2px 8px rgba(0,0,0,0.9)',
         }}>
-          Immagine non trovata
+          {status === 'unsplash' ? 'Immagine rappresentativa' : 'Immagine non trovata'}
         </Box>
       )}
     </Box>

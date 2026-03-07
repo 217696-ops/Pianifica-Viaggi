@@ -9,30 +9,35 @@ import { fetchCityDescription, fetchAttractionDescription, fetchFoodDescription,
 // --- COMPONENTE SMART IMAGE (Logica Blur + Badge) ---
 const SmartImage = ({ initialSrc, title, fallbackQuery, fallbackDefault, height, minHeight, marginTop }) => {
   const [src, setSrc] = useState(initialSrc);
-  const [showBadge, setShowBadge] = useState(false);
+  const [status, setStatus] = useState('original'); // 'original', 'unsplash', 'error'
 
   useEffect(() => {
     setSrc(initialSrc);
-    setShowBadge(false);
+    setStatus('original');
   }, [initialSrc, fallbackQuery]);
 
   const handleError = async () => {
-    // Se siamo già in errore o Unsplash ha già fallito, non riprovare
-    if (showBadge) return;
-
+    if (status !== 'original') return;
     try {
       const unsplashUrl = await getUnsplashImage(fallbackQuery, fallbackDefault);
-
-      // Verifichiamo se Unsplash ha restituito il fallback locale
       if (unsplashUrl === fallbackDefault) {
-        setShowBadge(true);
+        setStatus('error');
+        setSrc(fallbackDefault);
+      } else {
+        setStatus('unsplash');
+        setSrc(unsplashUrl);
       }
-      setSrc(unsplashUrl);
     } catch (err) {
-      console.error("Errore nel recupero immagine:", err);
+      setStatus('error');
       setSrc(fallbackDefault);
-      setShowBadge(true);
     }
+  };
+
+  // Gestione dinamica dello stile in base allo stato
+  const getFilterStyle = () => {
+    if (status === 'unsplash') return 'blur(0px) brightness(1.0)'; // Leggero per Unsplash
+    if (status === 'error') return 'blur(3px) brightness(0.7)';    // Forte per Errore
+    return 'none';
   };
 
   return (
@@ -44,17 +49,23 @@ const SmartImage = ({ initialSrc, title, fallbackQuery, fallbackDefault, height,
         onError={handleError}
         style={{ 
           objectFit: 'cover', objectPosition: 'center', width: '100%', height, minHeight, borderRadius: "10px", marginTop, 
-          filter: showBadge ? 'blur(5px) brightness(0.7)' : 'none',
-          transition: 'filter 0.3s ease'
+          filter: getFilterStyle(),
+          transition: 'filter 0.4s ease'
         }} 
       />
-      {showBadge && (
+
+      {status !== 'original' && (
         <Typography sx={{
           position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-          color: 'white', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '2em',
-          textShadow: '2px 2px 8px rgba(0,0,0,0.8)', textAlign: 'center', width: '90%', pointerEvents: 'none'
+          color: 'white', fontWeight: 'bold', textTransform: 'uppercase', 
+          textAlign: 'center', width: '90%', pointerEvents: 'none',
+          opacity: status === 'unsplash' ? 0.7 : 1,
+          fontSize: status === 'unsplash' ? '1.5em' : '1.5em', // Testo più piccolo per Unsplash
+          textShadow: status === 'unsplash' 
+            ? '1px 1px 4px rgba(0,0,0,0.6)' 
+            : '2px 2px 10px rgba(0,0,0,0.9)',
         }}>
-          Immagine non trovata
+          {status === 'unsplash' ? 'Immagine rappresentativa' : 'Immagine non disponibile'}
         </Typography>
       )}
     </Box>

@@ -69,8 +69,28 @@ export default function CitySelector({city, setCity, attrazione, setAttrazione, 
                 {city !== '' && !elenco_regioni.includes(city) ? (
                   <Stack spacing={2} alignItems="center" marginTop={1}>
                     <ToggleButtonGroup size="medium" value={pagina} exclusive onChange={handlePageChange}>
-                      <ToggleButton value="attrazioni" onClick={() => {setAttrazione(''); setFood('');}}>Cosa Vedere</ToggleButton>
-                      <ToggleButton value="cibo" onClick={() => {setAttrazione(''); setFood('');}}>Cosa Mangiare</ToggleButton>
+                      <ToggleButton 
+                        value="attrazioni" 
+                        onClick={() => {setAttrazione(''); setFood('');}} 
+                        sx={{ 
+                          whiteSpace: 'nowrap', 
+                          minWidth: 'max-content',
+                          width: '100%',
+                          fontSize: '0.7rem'
+                        }}>
+                        Cosa Vedere
+                      </ToggleButton>
+                      <ToggleButton 
+                        value="cibo"
+                        onClick={() => {setAttrazione(''); setFood('');}} 
+                        sx={{ 
+                          whiteSpace: 'nowrap', 
+                          minWidth: 'max-content',
+                          width: '100%',
+                          fontSize: '0.7rem'
+                        }}>
+                        Cosa Mangiare
+                      </ToggleButton>
                     </ToggleButtonGroup>
                   </Stack>
                   ):null}

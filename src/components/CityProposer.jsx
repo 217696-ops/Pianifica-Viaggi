@@ -15,7 +15,22 @@ export default function CityProposer({ db, setDb, setCity }) {
     if (!newCityName.trim()) return;
 
     // Formattiamo il nome mettendo la prima lettera maiuscola per estetica
-    const formattedCity = newCityName.trim().charAt(0).toUpperCase() + newCityName.trim().slice(1).toLowerCase();
+    const formattedCity = newCityName
+    .trim()
+    .toLowerCase()
+    .split(' ')
+    .map((word, index) => {
+      // Lista di particelle che preferiamo mantenere minuscole (opzionale)
+      const lowerCaseWords = ["da", "de", "di", "do", "du", "dallo", "dalle", "delle", "degli", "del", "del", "dello", "a", "al", "alle", "agli", "in", "nel", "nella", "nelle", "negli", "con", "per", "tra", "fra"];
+
+      if (index > 0 && lowerCaseWords.includes(word)) {
+        return word;
+      }
+
+      // Capitalizza la prima lettera di ogni parola
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(' ');
 
     // Controlliamo se esiste già
     if (db[formattedCity]) {
@@ -80,6 +95,10 @@ export default function CityProposer({ db, setDb, setCity }) {
           variant="contained" 
           onClick={handlePropose} 
           disabled={isLoading || !newCityName}
+          sx={{ 
+            whiteSpace: 'nowrap', 
+            minWidth: 'max-content'
+          }}
         >
           {isLoading ? <CircularProgress size={24} /> : 'Genera Città'}
         </Button>

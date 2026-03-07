@@ -69,7 +69,7 @@ export async function generateCityJSON(cityName) {
 Devi rispondere ESCLUSIVAMENTE con un oggetto JSON valido, senza testo prima o dopo, senza formattazione markdown (niente \`\`\`json).
 Usa esattamente questa struttura:
 {
-  "regione": "Nome del continente o Italia",
+  "regione": "Nome del continente (Nord America, Sud America, Europa, Asia, Africa, Oceania) o Italia",
   "nazione": "codice nazione 2 lettere minuscole (es. it, fr, us)",
   "descrizione": "",
   "attrazioni": {
