@@ -4,22 +4,23 @@ import { Box, Paper, Grid, Typography } from '@mui/material';
 import { getRegioni, getCitta, getCittaByRegione, getDefaultImage } from '../utils/helpers';
 import { getUnsplashImage } from '../services/api';
 
+const track_token = import.meta.env.VITE_FORMSPREE_TRACK_TOKEN;
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#eee',
   ...theme.typography.body2,
   padding: theme.spacing(2),
   textAlign: 'center',
   color: theme.palette.text.secondary,
-  position: 'relative', // Necessario per posizionare il badge
+  position: 'relative', 
   overflow: 'hidden'
 }));
 
 const SmartCardImage = ({ initialSrc, title, fallbackQuery, fallbackDefault }) => {
   const [src, setSrc] = useState(initialSrc);
-  const [status, setStatus] = useState('original'); // 'original', 'unsplash', 'error'
+  const [status, setStatus] = useState('original'); 
 
   const handleError = async () => {
-    // Evitiamo loop se siamo già in stato di errore o abbiamo già caricato Unsplash
     if (status !== 'original') return;
 
     try {
@@ -38,10 +39,9 @@ const SmartCardImage = ({ initialSrc, title, fallbackQuery, fallbackDefault }) =
     }
   };
 
-  // Calcolo dinamico dello stile dell'immagine
   const getFilterStyle = () => {
-    if (status === 'unsplash') return 'blur(0px) brightness(1.0)'; // Leggero per Unsplash
-    if (status === 'error') return 'blur(3px) brightness(0.7)';    // Forte per Errore
+    if (status === 'unsplash') return 'blur(0px) brightness(1.0)';
+    if (status === 'error') return 'blur(3px) brightness(0.7)';    
     return 'none';
   };
 
@@ -74,7 +74,6 @@ const SmartCardImage = ({ initialSrc, title, fallbackQuery, fallbackDefault }) =
           letterSpacing: '1px',
           pointerEvents: 'none',
           width: '80%',
-          // --- LOGICA TESTO DIFFERENZIATA ---
           opacity: status === 'unsplash' ? 0.7 : 1,
           fontSize: status === 'unsplash' ? '0.75rem' : '0.9rem',
           textShadow: status === 'unsplash' 
@@ -93,22 +92,45 @@ export default function ImageGrid({city, setCity, attrazione, setAttrazione, foo
 
   const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 
+  // --- NUOVA FUNZIONE: Invia i dati a Formspree ---
+  const trackClick = async (itemName, itemType) => {
+    try {
+      // SOSTITUISCI CON IL CODICE DEL TUO NUOVO FORM
+      await fetch(`https://formspree.io/f/${track_token}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          ElementoCliccato: itemName,
+          Tipo: itemType,
+          Data: new Date().toLocaleString()
+        })
+      });
+    } catch (err) {
+      // console.error("Errore nel tracciamento:", err);
+    }
+  };
+
+  // --- AGGIORNATI GLI HANDLER DEI CLICK ---
   const handleClickCity = (nomeCitta) => {
     setCity(nomeCitta);
     scrollToTop();
+    trackClick(nomeCitta, "Città"); // Traccia Città
   };
 
   const handleClickAttraction = (nomeAttrazione) => {
     setAttrazione(nomeAttrazione);
     scrollToTop();
+    // trackClick(nomeAttrazione, "Attrazione"); // Traccia Attrazione
   };
 
   const handleClickFood = (nomeFood) => {
     setFood(nomeFood);
     scrollToTop();
+    // trackClick(nomeFood, "Cibo"); // Traccia Cibo
   };
 
-  // Helper aggiornato per usare SmartCardImage
   const renderCard = (title, imagePath, fallbackQuery, fallbackDefault, onClick) => (
     <Grid item xs={6} sm={4} key={title} onClick={onClick} sx={{ cursor: onClick ? 'pointer' : 'default' }}>
       <Item>

@@ -5,6 +5,7 @@ import { generateCityJSON } from '../services/api';
 import Meteo from "./Meteo"; 
 
 const token = import.meta.env.VITE_WEATHER_TOKEN;
+const generazione_token = import.meta.env.VITE_FORMSPREE_GENERAZIONE_TOKEN;
 
 export default function CityProposer({ db, setDb, setCity }) {
   const [newCityName, setNewCityName] = useState('');
@@ -62,7 +63,7 @@ export default function CityProposer({ db, setDb, setCity }) {
         } else {
           setMessage('Mi dispiace, non ho trovato la città che mi hai chiesto');
           setNewCityName('');
-          console.log('Questa città non esiste!', output["cod"]);
+          console.log('Città non trovata!', output["cod"]);
           setIsLoading(false);
           return;
         }
@@ -70,11 +71,40 @@ export default function CityProposer({ db, setDb, setCity }) {
       }catch (e) {
         setMessage('Mi dispiace, non ho trovato la città che mi hai chiesto');
         setNewCityName('');
-        console.log('Questa città non esiste!', output);
+        console.log('Città non trovata!', output);
         setIsLoading(false);
         return;
       }
     setIsLoading(false);
+
+    // Registro la città nel database
+    if (newCityData) {
+      // 1. Aggiorni l'interfaccia utente (come abbiamo già fatto)
+      setDb(prevDb => ({ ...prevDb, [formattedCity]: newCityData }));
+
+      // 2. INVII I DATI AL TUO ARCHIVIO PERSONALE SILENZIOSAMENTE
+      try {
+        await fetch(`https://formspree.io/f/${generazione_token}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            CittaRichiesta: formattedCity,
+            DataRichiesta: new Date().toLocaleString(),
+            JSON_Pronto: newCityData 
+          })
+        });
+        // console.log("Dati inviati con successo in archivio!");
+      } catch (err) {
+        // console.error("Errore nell'invio dei log:", err);
+      }
+
+      // 3. Mostri il messaggio di successo all'utente
+      setMessage('Città creata con successo!');
+      setNewCityName('');
+      setCity(formattedCity);
+    }
   };
 
   return (
