@@ -77,8 +77,8 @@ export default function CitySelector({city, setCity, attrazione, setAttrazione, 
                           minWidth: 'max-content',
                           width: '100%',
                           fontSize: '0.7rem'
-                        }}>
-                        Cosa Vedere
+                        }}> 
+                        {db[city]["regione"] === "Giappone 2027" ? "Momijigari" : "Cosa Vedere"}
                       </ToggleButton>
                       <ToggleButton 
                         value="cibo"
@@ -89,7 +89,9 @@ export default function CitySelector({city, setCity, attrazione, setAttrazione, 
                           width: '100%',
                           fontSize: '0.7rem'
                         }}>
-                        Cosa Mangiare
+                        { // Utilizzo il tab cibo per gli Aki Matsuri
+                        db[city]["regione"] === "Giappone 2027" ? "Aki Matsuri" : "Cosa Mangiare"
+                        }
                       </ToggleButton>
                     </ToggleButtonGroup>
                   </Stack>

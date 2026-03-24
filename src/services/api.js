@@ -95,6 +95,7 @@ Inserisci almeno 8-10 attrazioni e 6-8 piatti tipici. Per i valori delle attrazi
     const parsedData = JSON.parse(cleanJsonString);
     return parsedData;
   } catch (error) {
+    console.error("Risposta Mistral:", parsedData);
     console.error("Errore nella generazione o nel parsing del JSON:", error);
     return null;
   }

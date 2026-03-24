@@ -12,13 +12,15 @@ export const getCittaByRegione = (db, regione) => {
 };
 
 export const creaLinkGoogleMaps = (attrazioni, citta) => {
-  const cittaFormattata = citta.replace(/\s/g, '+');
+  const cittaFormattata = citta.replace(/\d+/g, '').replace(/\s/g, '+');
   let link = 'https://www.google.com/maps/dir/';
 
   attrazioni.forEach((attrazione) => {
     if (!attrazione.toLowerCase().includes('isola')) {
       const attrazioneFormattata = attrazione.replace(/\s/g, '+');
-      link += `${attrazioneFormattata},${cittaFormattata}/`;
+      if (!attrazioneFormattata.startsWith('+')) { // se è un evento non lo aggiunge (inizia con +)
+        link += `${attrazioneFormattata},${cittaFormattata}/`;
+      }
     }
   });
 

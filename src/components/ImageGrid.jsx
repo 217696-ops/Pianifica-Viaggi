@@ -6,6 +6,14 @@ import { getUnsplashImage } from '../services/api';
 
 const track_token = import.meta.env.VITE_FORMSPREE_TRACK_TOKEN;
 
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+const registra = false;
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#eee',
   ...theme.typography.body2,
@@ -116,19 +124,19 @@ export default function ImageGrid({city, setCity, attrazione, setAttrazione, foo
   const handleClickCity = (nomeCitta) => {
     setCity(nomeCitta);
     scrollToTop();
-    trackClick(nomeCitta, "Città"); // Traccia Città
+    if(registra) trackClick(nomeCitta, "Città"); // Traccia Città
   };
 
   const handleClickAttraction = (nomeAttrazione) => {
     setAttrazione(nomeAttrazione);
     scrollToTop();
-    // trackClick(nomeAttrazione, "Attrazione"); // Traccia Attrazione
+    if(registra) trackClick(nomeAttrazione, "Attrazione"); // Traccia Attrazione
   };
 
   const handleClickFood = (nomeFood) => {
     setFood(nomeFood);
     scrollToTop();
-    // trackClick(nomeFood, "Cibo"); // Traccia Cibo
+    if(registra) trackClick(nomeFood, "Cibo"); // Traccia Cibo
   };
 
   const renderCard = (title, imagePath, fallbackQuery, fallbackDefault, onClick) => (
@@ -140,7 +148,8 @@ export default function ImageGrid({city, setCity, attrazione, setAttrazione, foo
           fallbackQuery={fallbackQuery} 
           fallbackDefault={fallbackDefault} 
         />
-        <Typography sx={{ mt: 1 }}>{title}</Typography>
+        {/* Rimuove il '+' solo se è il primo carattere della stringa (Evento)*/}
+        <Typography sx={{ mt: 1 }}>{title.replace(/^\+/, '')}</Typography>
       </Item>  
     </Grid>
   );

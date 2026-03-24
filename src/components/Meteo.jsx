@@ -98,9 +98,10 @@ function valutaGiorno(data, output, timezone) {
 }
 
 async function getWeather(city, data, db) {
+  const cleanCity = city.replace(/\d+/g, '').trim();
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city},${db[city]["nazione"]}&APPID=${token}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${cleanCity},${db[city]["nazione"]}&APPID=${token}`
     );
     const output = await response.json();
     // console.log(output);

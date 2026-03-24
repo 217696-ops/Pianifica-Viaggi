@@ -2,10 +2,17 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Box, TextField, Button, CircularProgress, Typography, Paper } from '@mui/material';
 import { generateCityJSON } from '../services/api';
-import Meteo from "./Meteo"; 
 
 const token = import.meta.env.VITE_WEATHER_TOKEN;
 const generazione_token = import.meta.env.VITE_FORMSPREE_GENERAZIONE_TOKEN;
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+const registra = false;
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 
 export default function CityProposer({ db, setDb, setCity }) {
   const [newCityName, setNewCityName] = useState('');
@@ -78,7 +85,7 @@ export default function CityProposer({ db, setDb, setCity }) {
     setIsLoading(false);
 
     // Registro la città nel database
-    if (newCityData) {
+    if (newCityData && registra) {
       // 1. Aggiorni l'interfaccia utente (come abbiamo già fatto)
       setDb(prevDb => ({ ...prevDb, [formattedCity]: newCityData }));
 

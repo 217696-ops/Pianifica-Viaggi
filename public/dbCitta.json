@@ -471,6 +471,61 @@
       "Éclair": "",
       "Tarte Tatin": ""
     }
+  },
+  "Tokyo 2027": {
+    "regione": "Giappone 2027",
+    "nazione": "jp",
+    "descrizione": "Katsuobushi, stiamo cucinando",
+    "attrazioni": {
+      "Icho Namiki": "",
+      "Meiji Jingu Gaien": "",
+      "Shinjuku Gyoen": "",
+      "Hama-rikyu": "",
+      "Rikugien Garden": "",
+      "Nikko Toshogu": "",
+      "Nikko Shinkyo": "",
+      "Nikko Kegon": "",
+      "Momiji K corridor": "",
+      "Kamakura": ""
+    },
+    "cibo": {
+      "Nezu Jinja Reitaisai": "",
+      "Shinagawa Shukuba Matsuri": "",
+      "Ikebukuro Fukuro Matsuri": "",
+      "Kichijoji Aki Matsuri": "",
+      "Zojoji Temple Autumn Festival": "",
+      "Oeshiki Matsuri": "",
+      "Kawagoe Matsuri": "",
+      "Nihonbashi Ebisu Ko Bettara-ichi": "",
+      "Nikko Shuki Reitaisai": "",
+      "Tori-no-Ichi": "",
+      "Hachioji Ginkgo Festival": ""
+    }
+  },
+  "Kyoto 2027": {
+    "regione": "Giappone 2027",
+    "nazione": "jp",
+    "descrizione": "Katsuobushi, stiamo cucinando",
+    "attrazioni": {
+      "Eikan-do": "",
+      "Kiyomizu-dera": "",
+      "Tofuku-ji": "",
+      "Enko-ji": "",
+      "Bishamon-do": "",
+      "Daigo-ji": "",
+      "Kodai-ji": "",
+      "To-ji": ""
+    },
+    "cibo": {
+      "Seimei Jinja Reitaisai": "",
+      "Kishiwada Danjiri Matsuri": "",
+      "Zuiki Matsuri": "",
+      "Kotohira-gu Reitaisai": "",
+      "Nada no Kenka Matsuri": "",
+      "Jidai Matsuri": "",
+      "Kurama no Hi Matsuri": "",
+      "+Momiji Matsuri": ""
+    }
   }
   
 }
