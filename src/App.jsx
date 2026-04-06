@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -28,12 +28,33 @@ export default function App() {
   const [pagina, setPagina] = useState('attrazioni');
   const [attrazione, setAttrazione] = useState('');
   const [food, setFood] = useState('');
-  const [db, setDb] = useState(initialDb); // TRASFORMIAMO IL DB IN UNO STATO
+  const [db, setDb] = useState(initialDb);
 
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
   const [theme, setTheme] = useState(
     createTheme({ palette: { mode: isDark ? "dark" : "light" } })
   );
+
+  const contentRef = useRef(null);
+  
+  const handleCitySelection = (selectedCity) => {
+    if (!selectedCity || selectedCity === '') {
+      setCity('');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    setCity(selectedCity);
+
+     setTimeout(() => {
+        if (contentRef.current) {
+          contentRef.current.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+      }, 50); // 50ms per dare tempo al browser di aggiornare il DOM
+    };
 
   const elenco_regioni = getRegioni(db);
   const isRegionSelected = elenco_regioni.includes(city);
@@ -42,22 +63,22 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <CitySelector 
-        city={city} setCity={setCity} 
+        city={city} setCity={handleCitySelection} 
         attrazione={attrazione} setAttrazione={setAttrazione} 
         food={food} setFood={setFood} 
         pagina={pagina} setPagina={setPagina} 
         theme={theme} setTheme={setTheme} db={db}
       />
+
       <Box marginTop={1}>
-        {city === '' && (
-          <Grid container marginBottom={1}>
-            <Grid item xs={12}>
-              <Item>
-                <CityProposer db={db} setDb={setDb} setCity={setCity} />
-              </Item>            
-            </Grid>         
-          </Grid>
-        )}
+        <Grid container marginBottom={1} ref={contentRef}>
+          <Grid item xs={12}>
+            <Item>
+              <CityProposer db={db} setDb={setDb} setCity={handleCitySelection} />
+            </Item>            
+          </Grid>         
+        </Grid>
+
         <Grid container spacing={1} direction="row-reverse">
           <Grid item sm={3} xs={12}>            
             <Item>
@@ -70,9 +91,9 @@ export default function App() {
             </Item>            
           </Grid>
           <Grid item sm={9} xs={12}>            
-            <Item style={{ border: 'none', padding: 0, background: 'none', height: '100%', width: "100%",boxShadow: 'none' }}>            
+            <Item style={{ border: 'none', padding: 0, background: 'none', height: '100%', width: "100%",boxShadow: 'none' }}>
               <ImageGrid 
-                city={city} setCity={setCity} 
+                city={city} setCity={handleCitySelection} 
                 attrazione={attrazione} setAttrazione={setAttrazione} 
                 food={food} setFood={setFood}
                 pagina={pagina} db={db} 

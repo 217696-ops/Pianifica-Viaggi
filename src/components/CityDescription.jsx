@@ -82,24 +82,33 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
   // Fetch City AI Description
   useEffect(() => {
     if (city && db[city] && (!db[city]["descrizione"] || db[city]["descrizione"] === "Descrizione")) {
-      setAiCityDesc(`Mistral AI, il massimo esperto di viaggi, sta elaborando la miglior descrizione per ${city}...`); // Messaggio di attesa
-      fetchCityDescription(city).then(setAiCityDesc);
+      const cityFormattata = city.replace(/\d+/g, '').trim().replace(/^\+/, '');
+      setAiCityDesc(`Mistral AI, il massimo esperto di viaggi, sta elaborando la miglior descrizione per ${cityFormattata}...`); // Messaggio di attesa
+      fetchCityDescription(cityFormattata).then(setAiCityDesc);
     }
   }, [city, db]);
 
   // Fetch Attraction AI Description
   useEffect(() => {
     if (city && attrazione && (!db[city]["attrazioni"][attrazione] || db[city]["attrazioni"][attrazione] === "Descrizione")) {
-      setAiAttrDesc(`Mistral AI, il massimo esperto di viaggi, sta elaborando la miglior descrizione per ${attrazione}...`); // Messaggio di attesa
-      fetchAttractionDescription(city, attrazione).then(setAiAttrDesc);
+      const cityFormattata = city.replace(/\d+/g, '').trim().replace(/^\+/, '');
+      const attrazioneFormattata = attrazione.replace(/\d+/g, '').trim().replace(/^\+/, '');
+      setAiAttrDesc(`Mistral AI, il massimo esperto di viaggi, sta elaborando la miglior descrizione per ${attrazioneFormattata}...`); // Messaggio di attesa
+      fetchAttractionDescription(cityFormattata, attrazioneFormattata).then(setAiAttrDesc);
     }
   }, [city, attrazione, db]);
 
   // Fetch Food AI Description
   useEffect(() => {
     if (city && food && (!db[city]["cibo"][food] || db[city]["cibo"][food] === "Descrizione")) {
-      setAiFoodDesc(`Mistral AI, il massimo esperto di cucina, sta elaborando la miglior descrizione per ${food}...`); // Messaggio di attesa
-      fetchFoodDescription(city, food).then(setAiFoodDesc);
+        // Utilizzo il tab cibo per gli Aki Matsuri
+        if(db[city]["regione"] === "Giappone 2027") {
+            setAiFoodDesc(`Mistral AI, il massimo esperto di viaggi, sta elaborando la miglior descrizione per ${food}...`); // Messaggio di attesa
+          fetchAttractionDescription(city, food).then(setAiFoodDesc);
+        } else {
+          setAiFoodDesc(`Mistral AI, il massimo esperto di cucina, sta elaborando la miglior descrizione per ${food}...`); // Messaggio di attesa
+          fetchFoodDescription(city, food).then(setAiFoodDesc);
+        }
     }
   }, [city, food, db]);
 
