@@ -83,7 +83,8 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
   useEffect(() => {
     if (city && db[city] && (!db[city]["descrizione"] || db[city]["descrizione"] === "Descrizione")) {
       const cityFormattata = city.replace(/\d+/g, '').trim().replace(/^\+/, '');
-      setAiCityDesc(`Mistral AI, il massimo esperto di viaggi, sta elaborando la miglior descrizione per ${cityFormattata}...`); // Messaggio di attesa
+      // setAiCityDesc(`Sto esplorando ${cityFormattata}...`); // Messaggio di attesa
+      setAiCityDesc(`Sto esplorando...`); // Messaggio di attesa
       fetchCityDescription(cityFormattata).then(setAiCityDesc);
     }
   }, [city, db]);
@@ -93,7 +94,8 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
     if (city && attrazione && (!db[city]["attrazioni"][attrazione] || db[city]["attrazioni"][attrazione] === "Descrizione")) {
       const cityFormattata = city.replace(/\d+/g, '').trim().replace(/^\+/, '');
       const attrazioneFormattata = attrazione.replace(/\d+/g, '').trim().replace(/^\+/, '');
-      setAiAttrDesc(`Mistral AI, il massimo esperto di viaggi, sta elaborando la miglior descrizione per ${attrazioneFormattata}...`); // Messaggio di attesa
+      // setAiAttrDesc(`Sto visitando ${attrazioneFormattata}...`); // Messaggio di attesa
+      setAiAttrDesc(`Sto visitando...`); // Messaggio di attesa
       fetchAttractionDescription(cityFormattata, attrazioneFormattata).then(setAiAttrDesc);
     }
   }, [city, attrazione, db]);
@@ -103,10 +105,12 @@ export default function CityDescription({ city, pagina, attrazione, food, setPag
     if (city && food && (!db[city]["cibo"][food] || db[city]["cibo"][food] === "Descrizione")) {
         // Utilizzo il tab cibo per gli Aki Matsuri
         if(db[city]["regione"] === "Giappone 2027") {
-            setAiFoodDesc(`Mistral AI, il massimo esperto di viaggi, sta elaborando la miglior descrizione per ${food}...`); // Messaggio di attesa
+          // setAiFoodDesc(`Sto assaggiando ${food}...`); // Messaggio di attesa
+          setAiFoodDesc(`Sto assaggiando...`); // Messaggio di attesa
           fetchAttractionDescription(city, food).then(setAiFoodDesc);
         } else {
-          setAiFoodDesc(`Mistral AI, il massimo esperto di cucina, sta elaborando la miglior descrizione per ${food}...`); // Messaggio di attesa
+          // setAiFoodDesc(`Sto assaggiando ${food}...`); // Messaggio di attesa
+          setAiFoodDesc(`Sto assaggiando...`); // Messaggio di attesa
           fetchFoodDescription(city, food).then(setAiFoodDesc);
         }
     }
